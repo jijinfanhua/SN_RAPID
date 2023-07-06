@@ -3,7 +3,7 @@ from collections import deque
 
 packets = []
 
-with open("F:\\fengyong_nic_res\\res_topk_nic_28\\baidu_build_trace_2_NIC_400W_from_5000W_simple.txt", 'r') as f: #
+with open("./trace/nic/baidu_build_trace_2_NIC_400W_from_5000W_simple.txt", 'r') as f: #
     while True: #
         line = f.readline()
         if not line:
@@ -11,7 +11,7 @@ with open("F:\\fengyong_nic_res\\res_topk_nic_28\\baidu_build_trace_2_NIC_400W_f
         arr = line.split()
         packets.append(int(arr[0]))
 
-record_f = open("nic_28_22_new_find_schedule_result.txt", 'a')
+record_f = open("./res/nic_28_22_new_find_schedule_result.txt", 'a')
 
 
 def distribute_points(n, total_positions=100):
