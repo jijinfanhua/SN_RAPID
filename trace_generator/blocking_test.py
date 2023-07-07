@@ -3,7 +3,7 @@ from collections import deque
 
 packets = []
 
-with open("output1.txt", 'r') as f:  #
+with open("output3.txt", 'r') as f:  #
     while True:
         line = f.readline()
         if not line:
@@ -112,7 +112,7 @@ def blocking_scheme(N=4, PIPE_LEN=76):
 # 使用的队列数量  *注* 所有队列加在一起大小为128，可在程序中调整128的值
 QUEUE_NUM = 1
 # 使用的processor数量，每个processor 19个cycle
-PIPE_LEN = 2
+PIPE_LEN = 4
 
 # ** 改变上面三个变量的值，即可修改实验场景 **
 blocking_scheme(QUEUE_NUM, PIPE_LEN * 19)

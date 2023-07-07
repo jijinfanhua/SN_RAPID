@@ -7,8 +7,8 @@
 #   4-4+number of flows:  flow id, arrival rate of each flow
 
 with open("input.txt", "w") as f:
-    f.write(str(int(9e7)) + '\n')
-    f.write(str(int(1e9)) + '\n')
-    f.write("10\n")
-    for i in range(10):
-        f.write(str(i) + " " + str(i + 10) + "\n")
+    f.write(str(int(5e6)) + '\n')
+    f.write(str(int(1e7)) + '\n')
+    f.write("5000\n")
+    for i in range(5000):
+        f.write(str(i) + " " + str(1) + "\n")
