@@ -1,4 +1,5 @@
 import math
+import os
 from collections import deque
 
 
@@ -49,10 +50,8 @@ def blocking_scheme(N=4, PIPE_LEN=76, throughput=20, packets=None, record_f=None
     round_pointer = 0
 
     queuing_latency = []
-    queue_lengths = []
-
-    avg_latency = 0
-    avg_queue_length = 0
+    packet_queue_lengths = []
+    clock_queue_lengths = []
 
     while pkt_num > 0 or any(q for q in queues if q):  # 任何一个queue不空就需要走下去
 
@@ -77,6 +76,12 @@ def blocking_scheme(N=4, PIPE_LEN=76, throughput=20, packets=None, record_f=None
             round_pointer = (round_pointer + 1) % 100
             pass
 
+        queue_len = 0
+        if pkt_num > 0:
+            for i in range(0, N):
+                queue_len += len(queues[i])
+        clock_queue_lengths.append(queue_len)
+
         # 如果dirty cam中有这个流，则阻塞，不能调度，指针下移；
         # 不轮询
         for i in range(0, N):
@@ -88,7 +93,7 @@ def blocking_scheme(N=4, PIPE_LEN=76, throughput=20, packets=None, record_f=None
                     latency_queuing = g_clock - head[1] + PIPE_LEN
                     # print(latency_queuing)
                     queuing_latency.append(latency_queuing)
-                    queue_lengths.append(head[2])
+                    packet_queue_lengths.append(head[2])
                     queues[queue_pointer].popleft()
                     dirty_cam[head[0]] = g_clock
                     break
@@ -105,11 +110,12 @@ def blocking_scheme(N=4, PIPE_LEN=76, throughput=20, packets=None, record_f=None
         g_clock += 1
 
     avg_latency = sum(queuing_latency) / len(queuing_latency)
-    avg_queue_length = sum(queue_lengths) / len(queue_lengths)
+    avg_packet_queue_length = sum(packet_queue_lengths) / len(packet_queue_lengths)
+    avg_clock_queue_length = sum(clock_queue_lengths) / len(clock_queue_lengths)
 
     print(pkt_drop_num)
-    record_f.write('pipelen: {} N: {} drop_start: {} packet_drop_num: {} average_latency: {} queue_length: {}\n'
-                   .format(PIPE_LEN, N, flag, pkt_drop_num, avg_latency, avg_queue_length))
+    record_f.write('pipelen: {} N: {} drop_start: {} packet_drop_num: {} average_latency: {} packet_queue_length: {} clock_queue_length: {}\n'
+                   .format(PIPE_LEN, N, flag, pkt_drop_num, avg_latency, avg_packet_queue_length, avg_clock_queue_length))
 
 
 """
@@ -119,18 +125,43 @@ def blocking_scheme(N=4, PIPE_LEN=76, throughput=20, packets=None, record_f=None
     PIPE_LEN：指定流水线长度（处理器为单位），每个处理器为22硬件周期
 """
 if __name__ == "__main__":
-    TRACE_FILE_NAME = "./trace/nic/baidu_build_trace_2_NIC_400W_from_5000W_simple.txt"
-    RES_FILE_NAME = "./res/nic_28_22_new_find_schedule_result.txt"
+    trace_list = ["./trace/nic/baidu_build_trace_1_NIC_400W_from_5000W_simple.txt",
+                  "./trace/nic/baidu_build_trace_2_NIC_400W_from_5000W_simple.txt",
+                  "./trace/nic/baidu_build_trace_3_NIC_400W_from_5000W_simple.txt",
+                  "./trace/nic/baidu_build_trace_4_NIC_400W_from_5000W_simple.txt",
+                  "./trace/nic/baidu_build_trace_5_NIC_400W_from_5000W_simple.txt",
+                  "./trace/nic/baidu_build_trace_6_NIC_400W_from_5000W_simple.txt",
+                  "./trace/nic/baidu_build_trace_7_NIC_400W_from_5000W_simple.txt",
+                  "./trace/switch/baidu_build_trace_11_Switch_800W_from_5000W_simple.txt",
+                  "./trace/switch/baidu_build_trace_23_Switch_800W_from_5000W_simple.txt",
+                  "./trace/switch/baidu_build_trace_34_Switch_800W_from_5000W_simple.txt",
+                  "./trace/switch/baidu_build_trace_45_Switch_800W_from_5000W_simple.txt",
+                  "./trace/switch/baidu_build_trace_57_Switch_800W_from_5000W_simple.txt",
+                  "./trace/switch/baidu_build_trace_68_Switch_800W_from_5000W_simple.txt",
+                  "./trace/switch/baidu_build_trace_79_Switch_800W_from_5000W_simple.txt",
+                  "./trace/switch/baidu_build_trace_91_Switch_800W_from_5000W_simple.txt"]
 
-    packets = get_trace(TRACE_FILE_NAME)
+    throughputs = [14, 28, 42, 56, 70, 84, 98, 10, 20, 30, 40, 50, 60, 70, 80]
 
-    record_f = open(RES_FILE_NAME, 'w')
+    for k in range(0, 9):
+        TRACE_FILE_NAME = trace_list[k]
+        base_name = os.path.basename(trace_list[k])
+        file_name, file_extension = os.path.splitext(base_name)
 
-    queue_nums = [8]  # , 2, 4, 8, 16, 32, 64]
-    for i in queue_nums:
-        for j in range(4, 5):
-            print('N=', i, ', j=', j, ' running!')
-            blocking_scheme(N=i, PIPE_LEN=(j * 21 + j), throughput=28, packets=packets, record_f=record_f)
-            print('N=', i, ', j=', j, ' end!\n----------------------')
+        print("Now, {} is running!".format(file_name))
 
-    record_f.close()
+        RES_FILE_NAME = "./res/" + file_name + "_result.txt"
+
+        packets = get_trace(TRACE_FILE_NAME)
+
+        record_f = open(RES_FILE_NAME, 'w')
+
+        queue_nums = [1, 2, 4, 8, 16, 32, 64, 128]  # , 2, 4, 8, 16, 32, 64]
+        for i in queue_nums:
+            for j in range(1, 9):
+                print('N=', i, ', j=', j, ' running!')
+                blocking_scheme(N=i, PIPE_LEN=(j * 21 + j), throughput=throughputs[k], packets=packets, record_f=record_f)
+                print('N=', i, ', j=', j, ' end!\n----------------------')
+
+        record_f.close()
+        del packets
