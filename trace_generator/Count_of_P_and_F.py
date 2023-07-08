@@ -1,5 +1,3 @@
-import math
-
 def process_file(filename):
     with open(filename, 'r') as file:
         lines = file.readlines()
@@ -16,4 +14,4 @@ print("第一个数目的个数：", count)
 print("第二个数目的求和：", sum_values)
 
 with open("countof_P_S_I.txt",'w') as f:
-    f.write('the num of flows: {} \n the num of packets:{}\n'.format(count,sum_values))
+    f.write('flows:{} \npackets:{}\n'.format(count,sum_values))
