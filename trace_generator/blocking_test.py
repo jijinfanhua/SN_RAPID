@@ -3,7 +3,7 @@ from collections import deque
 
 packets = []
 
-with open("packet_sequence_info.txt", 'r') as f:  #
+with open("output3.txt", 'r') as f:  #
     while True:
         line = f.readline()
         if not line:
