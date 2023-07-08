@@ -1,3 +1,7 @@
 在count_of_p_and_f中，能够分别提取出总共有多少个流和对包进行求和，然后生成countof_PSI文件。
-在combine文件中，把count_PSI和packet_文件进行combine
-加上时间,确定吞吐率,就能够通过blockingtest进行测试
+
+在combine文件中，把count_PSI和packet_文件进行combine.同时,这个文件还担任了确认吞吐率的作用
+
+然后用p_g生成数据包
+
+然后测试
