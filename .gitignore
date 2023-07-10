@@ -1,4 +1,3 @@
 /trace_generator/*.txt
 .idea/
 ./blocking_emulator/res
-/trace_generator/answer
