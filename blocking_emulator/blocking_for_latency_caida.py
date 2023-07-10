@@ -32,7 +32,7 @@ def distribute_points(n, total_positions=100):
 
 def blocking_scheme(N=4, PIPE_LEN=76, throughput=20, packets=None, record_f=None, ):
     # 使用列表推导式创建 N 个队列
-    maxlen = math.ceil(128 / N)
+    maxlen = math.ceil(1048576 / N)
     queues = [deque(maxlen=maxlen) for _ in range(N)]
     g_clock = 0  # 全局时钟复位
     dirty_cam = {}  # 建立空dirty cam
@@ -139,7 +139,7 @@ if __name__ == "__main__":
 
     throughputs = [9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99]
 
-    for k in range(10, 11):
+    for k in range(0, 11):
         TRACE_FILE_NAME = trace_list[k]
         base_name = os.path.basename(trace_list[k])
         file_name, file_extension = os.path.splitext(base_name)
