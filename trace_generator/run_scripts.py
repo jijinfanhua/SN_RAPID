@@ -35,7 +35,7 @@ def main(arg1, arg2, arg3):
     # 计算比值
     ratio = last_number / float(arg1)
 
-    if ratio <= 0.30 and ratio >= 0.10:
+    if ratio <= 0.90 and ratio >= 0.10:
         desktop = os.path.join(os.path.expanduser("~"), "Desktop")
         new_folder = os.path.join(desktop, "new_folder")
         os.makedirs(new_folder, exist_ok=True)
