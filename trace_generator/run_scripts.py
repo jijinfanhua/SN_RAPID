@@ -6,24 +6,24 @@ import time
 
 def main(arg1, arg2, arg3):
     # 运行第一个脚本
-    subprocess.check_call(['python', './trace_generator/generate_zipf_input.py', str(arg1), str(arg2), str(arg3)])
+    subprocess.check_call(['python', './generate_zipf_input.py', str(arg1), str(arg2), str(arg3)])
 
     # 等待文件生成
-    while not os.path.isfile('./trace_generator/input_zipf.txt'):
+    while not os.path.isfile('./input_zipf.txt'):
         time.sleep(1)
 
     # 运行第二个脚本
-    subprocess.check_call(['python', './trace_generator/packet_generator.py'])
+    subprocess.check_call(['python', './packet_generator.py'])
 
     # 等待文件生成
-    while not os.path.isfile('./trace_generator/output3.txt'):
+    while not os.path.isfile('./output3.txt'):
         time.sleep(1)
 
     # 运行第三个脚本，并获取它的输出
-    result = subprocess.check_output(['python', './trace_generator/blocking_test.py'])
+    result = subprocess.check_output(['python', './blocking_test.py'])
 
     # 等待文件生成
-    while not os.path.isfile('./trace_generator/record1_1.txt') or not os.path.isfile('./trace_generator/whether_packet_drop.txt'):
+    while not os.path.isfile('./record1_1.txt') or not os.path.isfile('./whether_packet_drop.txt'):
         time.sleep(1)
 
     lines = result.decode('utf-8').split('\n')
@@ -36,14 +36,13 @@ def main(arg1, arg2, arg3):
     ratio = last_number / float(arg1)
 
     if ratio <= 0.90 and ratio >= 0.10:
-        desktop = os.path.join(os.path.expanduser("~"), "Desktop")
-        new_folder = os.path.join(desktop, "new_folder")
+        new_folder = os.path.join('.', "new_folder")
         os.makedirs(new_folder, exist_ok=True)
         files_to_copy = [
-            './trace_generator/input_zipf.txt',
-            './trace_generator/output3.txt',
-            './trace_generator/record1_1.txt',
-            './trace_generator/whether_packet_drop.txt'
+            './input_zipf.txt',
+            './output3.txt',
+            './record1_1.txt',
+            './whether_packet_drop.txt'
         ]
         # 将每个文件复制到新的文件夹
         for file_path in files_to_copy:

@@ -19,7 +19,7 @@ normalized_zipf_distribution = np.round(normalized_zipf_distribution).astype(int
 # 调一下综述
 # normalized_zipf_distribution[-1] = num_packets - sum(normalized_zipf_distribution[:-1])
 
-with open("./trace_generator/input_zipf.txt", "w") as f:
+with open("./input_zipf.txt", "w") as f:
     f.write(str(num_packets) + '\n')
     f.write(str(time) + '\n')
     f.write(str(num_flows) + '\n')
