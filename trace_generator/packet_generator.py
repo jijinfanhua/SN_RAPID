@@ -40,6 +40,6 @@ def generate_packets(input_file, output_file):
 if __name__ == "__main__":
     # input_file = os.path.join(os.getcwd(), "input.txt")
     # output_file = os.path.join(os.getcwd(), "output.txt")
-    input_file = "./trace_generator/input_zipf.txt"
-    output_file = "./trace_generator/output3.txt"
+    input_file = "./input_zipf.txt"
+    output_file = "./output3.txt"
     generate_packets(input_file, output_file)

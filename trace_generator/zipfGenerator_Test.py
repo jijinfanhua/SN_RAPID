@@ -2,7 +2,7 @@ import numpy as np
 from scipy.stats import zipf
 import matplotlib.pyplot as plt
 
-def generate_zipf(n, lamda, a=2, filename='zipf_numbers.txt'):
+def generate_zipf(n, lamda, a=1.01, filename='zipf_numbers.txt'):
     """Generate a list of numbers satisfying Zipf's distribution and write them to a file.
 
     Arguments:
@@ -51,6 +51,6 @@ def generate_zipf(n, lamda, a=2, filename='zipf_numbers.txt'):
     return x.tolist()
 
 # 用法示例:
-n = 10
-lamda = 100
+n = 10000
+lamda = 1000
 print(generate_zipf(n, lamda))
