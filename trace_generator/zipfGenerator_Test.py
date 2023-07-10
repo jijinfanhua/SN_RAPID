@@ -52,5 +52,5 @@ def generate_zipf(n, lamda, a=1.01, filename='zipf_numbers.txt'):
 
 # 用法示例:
 n = 10000
-lamda = 100
+lamda = 1000
 print(generate_zipf(n, lamda))
