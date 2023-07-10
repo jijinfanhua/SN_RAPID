@@ -3,7 +3,7 @@ from collections import deque
 
 packets = []
 
-with open("output3.txt", 'r') as f:  #
+with open("./trace_generator/output3.txt", 'r') as f:  #
     while True:
         line = f.readline()
         if not line:
@@ -11,7 +11,7 @@ with open("output3.txt", 'r') as f:  #
         arr = line.split()
         packets.append([int(arr[1]), 0, 0, 0, int(arr[0])])
 
-record_f = open("whether_packet_drop.txt", 'w')
+record_f = open("./trace_generator/whether_packet_drop.txt", 'w')
 
 
 # 1. 每个包的等待时间（从到达到服务）或者滞留时间（从到达到处理完）
@@ -34,7 +34,7 @@ def blocking_scheme(N=4, PIPE_LEN=76):
 
     if_smart = 0
 
-    packet_f = open('record1_1.txt', 'w')
+    packet_f = open('./trace_generator/record1_1.txt', 'w')
 
     while pkt_num > 0 or any(q for q in queues if q):  # 任何一个queue不空就需要走下去
 
