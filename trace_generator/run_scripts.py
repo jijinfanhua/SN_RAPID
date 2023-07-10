@@ -36,7 +36,7 @@ def main(arg1, arg2, arg3):
     # 计算比值
     ratio = last_number / float(arg1)
     print(ratio)
-    if ratio <= 0.3 and ratio >= 0.01:
+    if ratio <= 0.9 and ratio >= 0.01:
         new_folder = ("packets{} clk{} flows{}".format(arg1,arg2,arg3))
         os.makedirs(new_folder, exist_ok=True)
         files_to_copy = [

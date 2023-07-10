@@ -2,4 +2,4 @@
 
 比如:python .\trace_generator\run_scripts.py 1000 2000 500   
 
-如果满足函数要求,就会在桌面显示文件.
+如果满足脚本的要求,就会生成对应文件
