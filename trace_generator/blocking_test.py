@@ -32,9 +32,13 @@ def blocking_scheme(N=4, PIPE_LEN=76):
     pkt_drop_num = 0
     drop_flag = 0
 
-    if_smart = 0
+    if_smart = 1
 
-    packet_f = open('./record1_1.txt', 'w')
+    queuing_latency = []
+    packet_queue_lengths = []
+    clock_queue_lengths = []
+
+    # packet_f = open('./record1_1.txt', 'w')
 
     while pkt_num > 0 or any(q for q in queues if q):  # 任何一个queue不空就需要走下去
 
@@ -48,10 +52,6 @@ def blocking_scheme(N=4, PIPE_LEN=76):
                     pkt[1] = len(queues[cur])
                     pkt[2] = g_clock
                     flow_pkt_num = 0
-                    for tmp in queues[cur]:
-                        if tmp[0] == pkt[0]:
-                            flow_pkt_num += 1
-                    pkt[3] = flow_pkt_num
                     queues[cur].append(pkt)
                 else:
                     drop_flag = 1
@@ -60,6 +60,12 @@ def blocking_scheme(N=4, PIPE_LEN=76):
                 pkt_num -= 1
             else:
                 pass
+
+        queue_len = 0
+        if pkt_num > 0:
+            for i in range(0, N):
+                queue_len += len(queues[i])
+        clock_queue_lengths.append(queue_len)
 
         # 如果dirty cam中有这个流，则阻塞，不能调度，指针下移；
         # 不轮询
@@ -70,13 +76,13 @@ def blocking_scheme(N=4, PIPE_LEN=76):
                 if len(queues[queue_pointer]) > 0:
                     head = queues[queue_pointer][0]
                     if head[0] in dirty_cam:
-                        pass
+                        break
                     else:
-                        pkt = queues[queue_pointer][0]
-                        pkt[2] = g_clock - pkt[2]
-                        packet_f.write(f"{pkt[0]} {pkt[1]} {pkt[2]} {pkt[3]} {g_clock}\n")
+                        latency_queuing = g_clock - head[2] + PIPE_LEN
+                        queuing_latency.append(latency_queuing)
+                        packet_queue_lengths.append(head[1])
                         queues[queue_pointer].popleft()
-                        dirty_cam[pkt[0]] = g_clock
+                        dirty_cam[head[0]] = g_clock
                         queue_pointer = (queue_pointer + 1) % N
                         break
         else:  # here
@@ -98,23 +104,23 @@ def blocking_scheme(N=4, PIPE_LEN=76):
 
         g_clock += 1
 
-    packet_f.close()
+    # packet_f.close()
+
+    avg_latency = sum(queuing_latency) / len(queuing_latency)
+    avg_packet_queue_length = sum(packet_queue_lengths) / len(packet_queue_lengths)
+    avg_clock_queue_length = sum(clock_queue_lengths) / len(clock_queue_lengths)
 
     print(pkt_drop_num)
-    if drop_flag == 0:
-        record_f.write('pipelen: {} N: {} drop_start: {} packet_drop_num: {}\n'.format(PIPE_LEN, N, -1, pkt_drop_num))
-        return
-    else:
-        record_f.write('pipelen: {} N: {} drop_start: {} packet_drop_num: {}\n'.format(PIPE_LEN, N, 1, pkt_drop_num))
-        return
+    record_f.write('pipelen: {} N: {} drop_start: {} packet_drop_num: {} avg_procesing_latency: {}, avg_packet_queue_length {}, avg_clock_queue_length: {}\n'
+                   .format(PIPE_LEN, N, drop_flag, pkt_drop_num, avg_latency, avg_packet_queue_length, avg_clock_queue_length))
 
 
 # 使用的队列数量  *注* 所有队列加在一起大小为128，可在程序中调整128的值
-QUEUE_NUM = 1
+QUEUE_NUM = 8
 # 使用的processor数量，每个processor 19个cycle
 PIPE_LEN = 4
 
 # ** 改变上面三个变量的值，即可修改实验场景 **
-blocking_scheme(QUEUE_NUM, PIPE_LEN * 19)
+blocking_scheme(QUEUE_NUM, PIPE_LEN * 22)
 
 record_f.close()
