@@ -4,7 +4,7 @@ import os
 import shutil
 import time
 
-def main(arg1, arg2, arg3):
+def main(arg1, arg2, arg3, arg4):
     # 运行第一个脚本
     subprocess.check_call(['python', './generate_zipf_input.py', str(arg1), str(arg2), str(arg3)])
 
@@ -34,9 +34,9 @@ def main(arg1, arg2, arg3):
 
     # 计算比值
     ratio = last_number / float(arg1)
-
+    print(ratio)
     if ratio <= 0.90 and ratio >= 0.10:
-        new_folder = os.path.join('.', "new_folder")
+        new_folder = os.path.join('.', arg4)
         os.makedirs(new_folder, exist_ok=True)
         files_to_copy = [
             './input_zipf.txt',
@@ -49,8 +49,8 @@ def main(arg1, arg2, arg3):
             shutil.copy(file_path, new_folder)
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
+    if len(sys.argv) != 5:
         print("需要提供三个参数.")
         sys.exit(1)
 
-    main(sys.argv[1], sys.argv[2], sys.argv[3])
+    main(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
