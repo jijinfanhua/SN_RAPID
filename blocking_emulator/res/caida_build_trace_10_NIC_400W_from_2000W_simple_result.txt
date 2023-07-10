@@ -1,1 +1,1 @@
-pipelen: 88 N: 8 drop_start: 0 packet_drop_num: 0 average_latency: 1148305.4193254516 packet_queue_length: 51239.69850925373 clock_queue_length: 325477.18754750123
+pipelen: 88 N: 8 drop_start: 1 packet_drop_num: 834609 average_latency: 299.23086427280464 packet_queue_length: 7.355870235714211 clock_queue_length: 75.57578121062559

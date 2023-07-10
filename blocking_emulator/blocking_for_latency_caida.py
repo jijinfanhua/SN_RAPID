@@ -32,7 +32,7 @@ def distribute_points(n, total_positions=100):
 
 def blocking_scheme(N=4, PIPE_LEN=76, throughput=20, packets=None, record_f=None, ):
     # 使用列表推导式创建 N 个队列
-    maxlen = math.ceil(1048576 / N)
+    maxlen = math.ceil(128 / N)
     queues = [deque(maxlen=maxlen) for _ in range(N)]
     g_clock = 0  # 全局时钟复位
     dirty_cam = {}  # 建立空dirty cam
@@ -125,7 +125,14 @@ def blocking_scheme(N=4, PIPE_LEN=76, throughput=20, packets=None, record_f=None
     PIPE_LEN：指定流水线长度（处理器为单位），每个处理器为22硬件周期
 """
 if __name__ == "__main__":
-    trace_list = ["./trace/nic/caida_build_trace_2_NIC_400W_from_2000W_simple.txt",
+    trace_list = ["./trace/nic/baidu_build_trace_1_NIC_400W_from_5000W_simple.txt",
+                  "./trace/nic/baidu_build_trace_2_NIC_400W_from_5000W_simple.txt",
+                  "./trace/nic/baidu_build_trace_3_NIC_400W_from_5000W_simple.txt",
+                  "./trace/nic/baidu_build_trace_4_NIC_400W_from_5000W_simple.txt",
+                  "./trace/nic/baidu_build_trace_5_NIC_400W_from_5000W_simple.txt",
+                  "./trace/nic/baidu_build_trace_6_NIC_400W_from_5000W_simple.txt",
+                  "./trace/nic/baidu_build_trace_7_NIC_400W_from_5000W_simple.txt",
+                  "./trace/nic/caida_build_trace_2_NIC_400W_from_2000W_simple.txt",
                   "./trace/nic/caida_build_trace_4_NIC_400W_from_2000W_simple.txt",
                   "./trace/nic/caida_build_trace_6_NIC_400W_from_2000W_simple.txt",
                   "./trace/nic/caida_build_trace_8_NIC_400W_from_2000W_simple.txt",
@@ -135,11 +142,12 @@ if __name__ == "__main__":
                   "./trace/nic/caida_build_trace_16_NIC_400W_from_2000W_simple.txt",
                   "./trace/nic/caida_build_trace_18_NIC_400W_from_2000W_simple.txt",
                   "./trace/nic/caida_build_trace_20_NIC_400W_from_2000W_simple.txt",
-                  "./trace/nic/caida_build_trace_22_NIC_400W_from_2000W_simple.txt"]
+                  "./trace/nic/caida_build_trace_22_NIC_400W_from_2000W_simple.txt",
+                  "./trace/nic/one_flow.txt"]
 
-    throughputs = [9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99]
+    throughputs = [14, 28, 42, 56, 70, 84, 98, 9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99, 45]
 
-    for k in range(0, 11):
+    for k in range(0, 19):
         TRACE_FILE_NAME = trace_list[k]
         base_name = os.path.basename(trace_list[k])
         file_name, file_extension = os.path.splitext(base_name)
