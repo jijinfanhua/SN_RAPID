@@ -73,4 +73,8 @@ if __name__ == "__main__":
     # 生成新的 txt 文件
     with open(sorted_file_path, 'w') as file:
         for line in lines:
+
             file.write(' '.join(line) + '\n')
+    subprocess.check_call(['python', './Utils/rm_all.py'])
+
+
