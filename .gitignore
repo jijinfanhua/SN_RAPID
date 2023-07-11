@@ -3,3 +3,8 @@
 ./blocking_emulator/res
 ./blocking_emulator/trace/nic
 ./blocking_emulator/trace/swtich
+
+./non_blocking_emulator/.vs/
+./non_blocking_emulator/x64
+./non_blocking_emulator/.idea
+./non_blocking_emulator/trace/.idea

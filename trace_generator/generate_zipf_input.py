@@ -14,7 +14,7 @@ num_flows = int(sys.argv[3])
 # num_flows = 1000
 
 # zipf分布
-zipf_distribution = np.random.zipf(1.29, num_flows)
+zipf_distribution = np.random.zipf(1.2, num_flows)
 # 对zipf分布的值进行缩放
 zipf_distribution = zipf_distribution / max(zipf_distribution)
 # 归一化，和为包数

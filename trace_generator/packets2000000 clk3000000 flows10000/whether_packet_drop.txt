@@ -1,0 +1,1 @@
+pipelen: 88 N: 8 drop_start: 1 packet_drop_num: 1242809 avg_procesing_latency: 569.4527127237382, avg_packet_queue_length 14.009458643856041, avg_clock_queue_length: 121.7365095341013
