@@ -75,6 +75,6 @@ if __name__ == "__main__":
         for line in lines:
 
             file.write(' '.join(line) + '\n')
-    subprocess.check_call(['python', './rm_all.py'])
+    subprocess.check_call(['python', './Utils/rm_all.py'])
 
 
