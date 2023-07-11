@@ -2,34 +2,31 @@ import numpy as np
 
 
 def process_file():
-    # 首先，我们打开文件并读取它的内容
+    # 在这里,需要修改为 input*.txt ,如果不是zipf分布的话要改一改
     with open('input_zipf.txt', 'r') as file:
         lines = file.readlines()
 
-    # 然后，我们将需要的数字存储在一个新的列表中
     result = []
-    for line in lines[3:]:  # 从第四行开始处理
-        numbers = line.split()  # 将每一行的内容根据空格分开
-        if int(numbers[1]) > 1:  # 如果第二个数字大于1
-            result.append(numbers[0])  # 将第一个数字添加到结果列表中
+    for line in lines[3:]:
+        numbers = line.split()
+        if int(numbers[1]) > 1:
+            result.append(numbers[0])
 
-    # 最后，我们将结果写入到新的文件中
+    # 写入到新的文件GreaterThan_1.txt中
     with open('gt_1.txt', 'w') as file:
         for number in result:
             file.write(number + '\n')
 
-
 process_file()
 
 def calculate():
-    # 从之前生成的文件中读取数据
     with open('gt_1.txt', 'r') as file:
         output_numbers = [line.strip() for line in file]
 
-    # 创建一个新的文件用于存储结果
+# 为了存储内容,需要一个新的程序
     result_file = open('result.txt', 'w')
 
-    # 读取并处理 output3.txt 文件
+    # 这里不需要改,output3.txt在其他地方被固化,如果要改的话要一次性修改多个地方
     with open('output3.txt', 'r') as file:
         lines = file.readlines()
 
@@ -39,19 +36,17 @@ def calculate():
         count = 0
         for line in lines:
             numbers = line.split()
-            if numbers[1] == output_number:  # 如果第二个数字等于当前的 output_number
+            if numbers[1] == output_number:  # 如果第二个数字等于当前的output_number
                 current_number = int(numbers[0])
                 if prev_number is not None:  # 如果不是第一次遇到符合条件的行
                     diff_sum += (current_number - prev_number)
                 prev_number = current_number
                 count += 1
 
-        if count > 0:  # 避免除以零
+        if count > 0: # div 0 err
             result = diff_sum / count
-            # 将 output_number 和计算结果写入文件
             result_file.write(output_number + ' ' + str(np.ceil(result)) + '\n')
 
-    # 关闭文件
     result_file.close()
 
 calculate()
