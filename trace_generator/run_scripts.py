@@ -24,7 +24,9 @@ def main(arg1, arg2, arg3):
     result = subprocess.check_output(['python', './blocking_test.py'])
 
     # 等待文件生成
-    while not os.path.isfile('./record1_1.txt') or not os.path.isfile('./whether_packet_drop.txt'):
+    #while not os.path.isfile('./record1_1.txt') or not os.path.isfile('./whether_packet_drop.txt'):
+
+    while not os.path.isfile('./whether_packet_drop.txt'):
         time.sleep(1)
 
     lines = result.decode('utf-8').split('\n')
@@ -42,7 +44,7 @@ def main(arg1, arg2, arg3):
         files_to_copy = [
             './input_zipf.txt',
             './output3.txt',
-            './record1_1.txt',
+         #   './record1_1.txt',
             './whether_packet_drop.txt'
         ]
         # 将每个文件复制到新的文件夹
@@ -50,9 +52,9 @@ def main(arg1, arg2, arg3):
             shutil.copy(file_path, new_folder)
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("需要提供三个参数.")
-        sys.exit(1)
+    # if len(sys.argv) != 4:
+    #     print("需要提供三个参数.")
+    #     sys.exit(1)
 
     main(sys.argv[1], sys.argv[2], sys.argv[3])
 
