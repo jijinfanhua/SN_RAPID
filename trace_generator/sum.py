@@ -7,7 +7,7 @@ def process_file(filename):
     sum_values = sum(int(line.split()[1]) for line in lines)
     return sum_values
 
-filename = './TRACE/1.1/0.074398packets2000000 clk4000000 flows50000/input_zipf_sorted.txt'  # 替换为你的文件名
+filename = './packet_sequence_info.txt'  # 替换为你的文件名
 sum_values = process_file(filename)
 
 print(sum_values)

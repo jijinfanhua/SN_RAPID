@@ -36,7 +36,7 @@ def main(arg1, arg2, arg3):
     # 计算比值
     ratio = last_number / float(arg1)
     print(ratio)
-    if ratio <= 0.9 and ratio >= 0.01:
+    if True:
         new_folder = ("packets{} clk{} flows{}".format(arg1,arg2,arg3))
         os.makedirs(new_folder, exist_ok=True)
         files_to_copy = [
@@ -56,23 +56,6 @@ if __name__ == "__main__":
 
     main(sys.argv[1], sys.argv[2], sys.argv[3])
 
-    import matplotlib.pyplot as plt
-
-    # folder_name = "packets{} clk{} flows{}".format(sys.argv[1], sys.argv[2], sys.argv[3])
-    # file_path = os.path.join('.', folder_name, 'input_zipf.txt')
-    #
-    # with open(file_path, 'r') as file:
-    #     lines = file.readlines()
-    #     lines = lines[3:]
-    #
-    # # 将每一行后面的数据按照大小排序
-    # lines = [line.strip().split() for line in lines]
-    # lines = sorted(lines, key=lambda x: int(x[1]))
-    #
-    # # 生成新的 txt 文件
-    # with open('input_zipf_sorted.txt', 'w') as file:
-    #     for line in lines:
-    #         file.write(' '.join(line) + '\n')
     folder_name = "packets{} clk{} flows{}".format(sys.argv[1], sys.argv[2], sys.argv[3])
     input_file_path = os.path.join('.', folder_name, 'input_zipf.txt')
     sorted_file_path = os.path.join('.', folder_name, 'input_zipf_sorted.txt')
