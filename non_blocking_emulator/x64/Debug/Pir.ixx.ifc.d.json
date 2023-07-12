@@ -1,0 +1,35 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\s\\desktop\\infocom2024\\non_blocking_emulator\\pir.ixx",
+        "ProvidedModule": "rapid.Pir",
+        "Includes": [],
+        "ImportedModules": [
+            {
+                "Name": "rapid.Packet",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\Packet.ixx.ifc"
+            },
+            {
+                "Name": "rapid.PacketQueue",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\PacketQueue.ixx.ifc"
+            },
+            {
+                "Name": "rapid.LinkedPacketQueue",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\LinkedPacketQueue.ixx.ifc"
+            },
+            {
+                "Name": "rapid.BlockQueue",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\BlockQueue.ixx.ifc"
+            },
+            {
+                "Name": "rapid.RoundRobinQueue",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\RoundRobinQueue.ixx.ifc"
+            },
+            {
+                "Name": "std",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\std.ixx.ifc"
+            }
+        ],
+        "ImportedHeaderUnits": []
+    }
+}

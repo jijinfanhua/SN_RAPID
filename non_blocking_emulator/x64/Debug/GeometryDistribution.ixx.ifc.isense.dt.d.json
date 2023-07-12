@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\s\\desktop\\infocom2024\\non_blocking_emulator\\geometrydistribution.ixx",
+        "ProvidedModule": "rapid.GeometryDistribution",
+        "Includes": [],
+        "ImportedModules": [
+            {
+                "Name": "std",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\std.ixx.ifc.dt"
+            }
+        ],
+        "ImportedHeaderUnits": []
+    }
+}

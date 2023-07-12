@@ -1,0 +1,12 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\users\\s\\desktop\\infocom2024\\non_blocking_emulator\\packetanalyzer.ixx",
+        "ProvidedModule": "rapid.PacketAnalyzer",
+        "ImportedModules": [
+            "rapid.Packet",
+            "std"
+        ],
+        "ImportedHeaderUnits": []
+    }
+}

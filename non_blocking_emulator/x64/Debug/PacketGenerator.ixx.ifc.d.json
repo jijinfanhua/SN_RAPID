@@ -1,0 +1,35 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\s\\desktop\\infocom2024\\non_blocking_emulator\\packetgenerator.ixx",
+        "ProvidedModule": "rapid.PacketGenerator",
+        "Includes": [],
+        "ImportedModules": [
+            {
+                "Name": "rapid.ZipfDistribution",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\ZipfDistribution.ixx.ifc"
+            },
+            {
+                "Name": "rapid.GeometryDistribution",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\GeometryDistribution.ixx.ifc"
+            },
+            {
+                "Name": "rapid.WriteBackGenerator",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\WriteBackGenerator.ixx.ifc"
+            },
+            {
+                "Name": "rapid.Packet",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\Packet.ixx.ifc"
+            },
+            {
+                "Name": "rapid.FlowInfo",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\FlowInfo.ixx.ifc"
+            },
+            {
+                "Name": "std",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\std.ixx.ifc"
+            }
+        ],
+        "ImportedHeaderUnits": []
+    }
+}

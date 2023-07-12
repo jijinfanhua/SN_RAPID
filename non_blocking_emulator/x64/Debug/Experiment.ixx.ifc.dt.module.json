@@ -1,0 +1,19 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\users\\s\\desktop\\infocom2024\\non_blocking_emulator\\experiment.ixx",
+        "ProvidedModule": "rapid.experimental",
+        "ImportedModules": [
+            "rapid.experimental.RawPipeline",
+            "rapid.experimental.SinglePeer",
+            "rapid.experimental.OverlapPeer",
+            "rapid.Packet",
+            "rapid.Device",
+            "rapid.PacketGenerator",
+            "rapid.PacketAnalyzer",
+            "rapid.FlowInfo",
+            "std"
+        ],
+        "ImportedHeaderUnits": []
+    }
+}

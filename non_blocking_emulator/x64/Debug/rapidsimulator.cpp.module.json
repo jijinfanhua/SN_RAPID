@@ -1,0 +1,33 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "x64\\Debug\\RapidSimulator.obj",
+            "outputs": [
+                "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\vc143.pdb",
+                "x64\\Debug\\"
+            ],
+            "requires": [
+                {
+                    "logical-name": "rapid.experimental"
+                },
+                {
+                    "logical-name": "rapid.experimental.bench"
+                },
+                {
+                    "logical-name": "rapid.ReadWritePeer"
+                },
+                {
+                    "logical-name": "rapid.SongPipeline"
+                },
+                {
+                    "logical-name": "rapid.ImprovedSongPipeline"
+                },
+                {
+                    "logical-name": "std"
+                }
+            ]
+        }
+    ]
+}
