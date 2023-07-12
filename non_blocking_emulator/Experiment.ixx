@@ -14,7 +14,7 @@ import std;
 export template <typename DeviceType, typename TupleType,size_t K = 2>
     requires std::is_base_of_v<Device, DeviceType> && std::is_base_of_v<BaseTuple, TupleType>
 class Experiment {
-    constexpr const static int m_extra_cycle_count = 128000;
+    constexpr const static int m_extra_cycle_count = 30000;
 
     RealTracePacketGenerator<TupleType> m_packet_generator;
     //SimplePacketGenerator<K> m_packet_generator;

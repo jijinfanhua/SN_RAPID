@@ -17,7 +17,7 @@ with open("./trace_syn/" + trace_name, 'r') as f:
             break
         arr = line.split()
         clk, idx = int(arr[0]), int(arr[1])
-        pkt_clk.append(clk)
+        pkt_clk.append(clk + 1)
 
 queue_clk_dict = {}
 

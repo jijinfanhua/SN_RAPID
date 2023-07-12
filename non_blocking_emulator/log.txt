@@ -1,0 +1,321 @@
+./trace_syn/direct_single_topk_syn_10000_100_100000_1.01.txt is used!
+load trace file is: ./trace_syn/syn_10000_100_100000_1.01.txt
+load trace
+0
+trace_loaded
+m_clock_max: 92
+ wrong type 
+direct single queue
+TopK used!
+Top K
+all pkts sent at 99996
+all sent99997
+Recv Pkt = 9999
+Send Pkt = 9999
+Drop  %  = 0.000000
+average elapse time = 87
+front_buffer rcv: 9999 snd: 9999
+wr_peer rcv 9999 snd: 9999
+multi_queue rcv 9999 snd: 9999packet average queue length: 0.0
+average queue length: 1.000050002500125e-05
+Drop % = 0.0, average elapse time = 87./trace_syn/direct_single_topk_syn_10000_100_100000_1.02.txt is used!
+load trace file is: ./trace_syn/syn_10000_100_100000_1.02.txt
+load trace
+0
+trace_loaded
+m_clock_max: 92
+ wrong type 
+direct single queue
+TopK used!
+Top K
+all pkts sent at 99990
+all sent99991
+Recv Pkt = 10000
+Send Pkt = 10000
+Drop  %  = 0.000000
+average elapse time = 87
+front_buffer rcv: 10000 snd: 10000
+wr_peer rcv 10000 snd: 10000
+multi_queue rcv 10000 snd: 10000packet average queue length: 0.0
+average queue length: 1.0001100121013312e-05
+Drop % = 0.0, average elapse time = 87./trace_syn/direct_single_topk_syn_10000_100_100000_1.03.txt is used!
+load trace file is: ./trace_syn/syn_10000_100_100000_1.03.txt
+load trace
+0
+trace_loaded
+m_clock_max: 92
+ wrong type 
+direct single queue
+TopK used!
+Top K
+all pkts sent at 100000
+all sent100001
+Recv Pkt = 9999
+Send Pkt = 9999
+Drop  %  = 0.000000
+average elapse time = 87
+front_buffer rcv: 9999 snd: 9999
+wr_peer rcv 9999 snd: 9999
+multi_queue rcv 9999 snd: 9999packet average queue length: 0.0
+average queue length: 0.0
+Drop % = 0.0, average elapse time = 87./trace_syn/direct_single_topk_syn_10000_100_100000_1.04.txt is used!
+load trace file is: ./trace_syn/syn_10000_100_100000_1.04.txt
+load trace
+0
+trace_loaded
+m_clock_max: 92
+ wrong type 
+direct single queue
+TopK used!
+Top K
+all pkts sent at 99999
+all sent100000
+Recv Pkt = 10000
+Send Pkt = 10000
+Drop  %  = 0.000000
+average elapse time = 87
+front_buffer rcv: 10000 snd: 10000
+wr_peer rcv 10000 snd: 10000
+multi_queue rcv 10000 snd: 10000packet average queue length: 0.0
+average queue length: 2.000040000800016e-05
+Drop % = 0.0, average elapse time = 87./trace_syn/direct_single_topk_syn_10000_100_100000_1.05.txt is used!
+load trace file is: ./trace_syn/syn_10000_100_100000_1.05.txt
+load trace
+0
+trace_loaded
+m_clock_max: 92
+ wrong type 
+direct single queue
+TopK used!
+Top K
+all pkts sent at 99998
+all sent99999
+Recv Pkt = 9992
+Send Pkt = 9992
+Drop  %  = 0.000000
+average elapse time = 91
+front_buffer rcv: 9992 snd: 9992
+wr_peer rcv 9992 snd: 9992
+multi_queue rcv 9992 snd: 9992packet average queue length: 0.0006
+average queue length: 0.0005000150004500135
+Drop % = 0.0, average elapse time = 91./trace_syn/direct_single_topk_syn_10000_100_100000_1.06.txt is used!
+load trace file is: ./trace_syn/syn_10000_100_100000_1.06.txt
+load trace
+0
+trace_loaded
+m_clock_max: 92
+ wrong type 
+direct single queue
+TopK used!
+Top K
+all pkts sent at 99987
+all sent99988
+Recv Pkt = 9514
+Send Pkt = 9514
+Drop  %  = 0.000000
+average elapse time = 87
+front_buffer rcv: 9514 snd: 9514
+wr_peer rcv 9514 snd: 9514
+multi_queue rcv 9514 snd: 9514packet average queue length: 0.0001
+average queue length: 8.001120156821956e-05
+Drop % = 0.0, average elapse time = 87./trace_syn/direct_single_topk_syn_10000_100_100000_1.07.txt is used!
+load trace file is: ./trace_syn/syn_10000_100_100000_1.07.txt
+load trace
+0
+trace_loaded
+m_clock_max: 92
+ wrong type 
+direct single queue
+TopK used!
+Top K
+all pkts sent at 99999
+all sent100000
+Recv Pkt = 10000
+Send Pkt = 10000
+Drop  %  = 0.000000
+average elapse time = 87
+front_buffer rcv: 10000 snd: 10000
+wr_peer rcv 10000 snd: 10000
+multi_queue rcv 10000 snd: 10000packet average queue length: 0.0002
+average queue length: 9.000180003600073e-05
+Drop % = 0.0, average elapse time = 87./trace_syn/direct_single_topk_syn_10000_100_100000_1.08.txt is used!
+load trace file is: ./trace_syn/syn_10000_100_100000_1.08.txt
+load trace
+0
+trace_loaded
+m_clock_max: 92
+ wrong type 
+direct single queue
+TopK used!
+Top K
+all pkts sent at 99989
+all sent99990
+Recv Pkt = 10000
+Send Pkt = 10000
+Drop  %  = 0.000000
+average elapse time = 87
+front_buffer rcv: 10000 snd: 10000
+wr_peer rcv 10000 snd: 10000
+multi_queue rcv 10000 snd: 10000packet average queue length: 0.0
+average queue length: 4.000480057606913e-05
+Drop % = 0.0, average elapse time = 87./trace_syn/direct_single_topk_syn_10000_100_100000_1.09.txt is used!
+load trace file is: ./trace_syn/syn_10000_100_100000_1.09.txt
+load trace
+0
+trace_loaded
+m_clock_max: 92
+ wrong type 
+direct single queue
+TopK used!
+Top K
+all pkts sent at 99986
+all sent99987
+Recv Pkt = 9976
+Send Pkt = 9976
+Drop  %  = 0.000000
+average elapse time = 87
+front_buffer rcv: 9976 snd: 9976
+wr_peer rcv 9976 snd: 9976
+multi_queue rcv 9976 snd: 9976packet average queue length: 0.0003
+average queue length: 0.00010001500225033755
+Drop % = 0.0, average elapse time = 87./trace_syn/direct_single_topk_syn_10000_100_100000_1.1.txt is used!
+load trace file is: ./trace_syn/syn_10000_100_100000_1.1.txt
+load trace
+0
+trace_loaded
+m_clock_max: 92
+ wrong type 
+direct single queue
+TopK used!
+Top K
+all pkts sent at 99978
+all sent99979
+Recv Pkt = 9999
+Send Pkt = 9999
+Drop  %  = 0.000000
+average elapse time = 87
+front_buffer rcv: 9999 snd: 9999
+wr_peer rcv 9999 snd: 9999
+multi_queue rcv 9999 snd: 9999packet average queue length: 0.0
+average queue length: 0.0
+Drop % = 0.0, average elapse time = 87./trace_syn/direct_single_topk_syn_10000_100_100000_1.11.txt is used!
+load trace file is: ./trace_syn/syn_10000_100_100000_1.11.txt
+load trace
+0
+trace_loaded
+m_clock_max: 92
+ wrong type 
+direct single queue
+TopK used!
+Top K
+all pkts sent at 99994
+all sent99995
+Recv Pkt = 9999
+Send Pkt = 9999
+Drop  %  = 0.000000
+average elapse time = 87
+front_buffer rcv: 9999 snd: 9999
+wr_peer rcv 9999 snd: 9999
+multi_queue rcv 9999 snd: 9999packet average queue length: 0.0
+average queue length: 6.000420029402058e-05
+Drop % = 0.0, average elapse time = 87./trace_syn/direct_single_topk_syn_10000_100_100000_1.12.txt is used!
+load trace file is: ./trace_syn/syn_10000_100_100000_1.12.txt
+load trace
+0
+trace_loaded
+m_clock_max: 92
+ wrong type 
+direct single queue
+TopK used!
+Top K
+all pkts sent at 99998
+all sent99999
+Recv Pkt = 9999
+Send Pkt = 9999
+Drop  %  = 0.000000
+average elapse time = 87
+front_buffer rcv: 9999 snd: 9999
+wr_peer rcv 9999 snd: 9999
+multi_queue rcv 9999 snd: 9999packet average queue length: 0.0001
+average queue length: 2.000060001800054e-05
+Drop % = 0.0, average elapse time = 87./trace_syn/direct_single_topk_syn_10000_100_100000_1.13.txt is used!
+load trace file is: ./trace_syn/syn_10000_100_100000_1.13.txt
+load trace
+0
+trace_loaded
+m_clock_max: 92
+ wrong type 
+direct single queue
+TopK used!
+Top K
+all pkts sent at 99993
+all sent99994
+Recv Pkt = 9999
+Send Pkt = 9999
+Drop  %  = 0.000000
+average elapse time = 98
+front_buffer rcv: 9999 snd: 9999
+wr_peer rcv 9999 snd: 9999
+multi_queue rcv 9999 snd: 9999packet average queue length: 0.0006
+average queue length: 0.0013401072085766862
+Drop % = 0.0, average elapse time = 98./trace_syn/direct_single_topk_syn_10000_100_100000_1.14.txt is used!
+load trace file is: ./trace_syn/syn_10000_100_100000_1.14.txt
+load trace
+0
+trace_loaded
+m_clock_max: 92
+ wrong type 
+direct single queue
+TopK used!
+Top K
+all pkts sent at 99993
+all sent99994
+Recv Pkt = 9998
+Send Pkt = 9998
+Drop  %  = 0.000000
+average elapse time = 88
+front_buffer rcv: 9998 snd: 9998
+wr_peer rcv 9998 snd: 9998
+multi_queue rcv 9998 snd: 9998packet average queue length: 0.0002
+average queue length: 0.00018001440115209216
+Drop % = 0.0, average elapse time = 88./trace_syn/direct_single_topk_syn_10000_100_100000_1.15.txt is used!
+load trace file is: ./trace_syn/syn_10000_100_100000_1.15.txt
+load trace
+0
+trace_loaded
+m_clock_max: 92
+ wrong type 
+direct single queue
+TopK used!
+Top K
+all pkts sent at 100000
+all sent100001
+Recv Pkt = 9952
+Send Pkt = 9952
+Drop  %  = 0.000000
+average elapse time = 90
+front_buffer rcv: 9952 snd: 9952
+wr_peer rcv 9952 snd: 9952
+multi_queue rcv 9952 snd: 9952packet average queue length: 0.0002
+average queue length: 0.00036000360003600034
+Drop % = 0.0, average elapse time = 90./trace_syn/direct_single_topk_syn_10000_100_100000_1.16.txt is used!
+load trace file is: ./trace_syn/syn_10000_100_100000_1.16.txt
+load trace
+0
+trace_loaded
+m_clock_max: 92
+ wrong type 
+direct single queue
+TopK used!
+Top K
+all pkts sent at 99966
+all sent99967
+Recv Pkt = 10000
+Send Pkt = 10000
+Drop  %  = 0.000000
+average elapse time = 118
+front_buffer rcv: 10000 snd: 10000
+wr_peer rcv 10000 snd: 10000
+multi_queue rcv 10000 snd: 10000packet average queue length: 0.0033
+average queue length: 0.004041414495073276
+Drop % = 0.0, average elapse time = 118
