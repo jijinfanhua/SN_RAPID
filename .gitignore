@@ -12,3 +12,4 @@
 ./non_blocking_emulator/trace_syn/*
 !./non_blocking_emulator/trace_syn/*_queue_info.txt
 !./non_blocking_emulator/trace_syn/direct_*.txt
+./non_blocking_emulator/RAPID-SIM.exe
