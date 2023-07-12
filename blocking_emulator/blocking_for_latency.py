@@ -143,7 +143,7 @@ if __name__ == "__main__":
 
     throughputs = [14, 28, 42, 56, 70, 84, 98, 10, 20, 30, 40, 50, 60, 70, 80]
 
-    for k in range(0, 9):
+    for k in range(9, 15):
         TRACE_FILE_NAME = trace_list[k]
         base_name = os.path.basename(trace_list[k])
         file_name, file_extension = os.path.splitext(base_name)

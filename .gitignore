@@ -1,16 +1,17 @@
-/trace_generator/*.txt
+trace_generator/*.txt
 .idea/
-./blocking_emulator/res
-./blocking_emulator/trace/nic
-./blocking_emulator/trace/swtich
+.vs/
+blocking_emulator/res
+blocking_emulator/trace/nic
+blocking_emulator/trace/swtich
 
-./non_blocking_emulator/.vs/
-./non_blocking_emulator/x64
-./non_blocking_emulator/.idea
-./non_blocking_emulator/Debug
-./non_blocking_emulator/trace/.idea
+non_blocking_emulator/.vs/
+non_blocking_emulator/x64
+non_blocking_emulator/.idea
+non_blocking_emulator/Debug
+non_blocking_emulator/trace/.idea
 
-./non_blocking_emulator/trace_syn/*
-!./non_blocking_emulator/trace_syn/*_queue_info.txt
-!./non_blocking_emulator/trace_syn/direct_*.txt
-./non_blocking_emulator/RAPID-SIM.exe
+non_blocking_emulator/trace_syn/*
+non_blocking_emulator/RAPID-SIM.exe
+!non_blocking_emulator/trace_syn/*_queue_info.txt
+!non_blocking_emulator/trace_syn/direct_*.txt
