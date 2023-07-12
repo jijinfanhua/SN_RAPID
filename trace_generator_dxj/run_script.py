@@ -1,9 +1,3 @@
-# if __name__ == "__main__":
-#     main(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
-#     # 1 包的数量
-#     # 2 流的数量
-#     # 3 周期数，在这里被固定为10 0000
-#     # 4 zipfa
 import subprocess
 import sys
 import os
@@ -13,9 +7,11 @@ import time
 
 def main(arg1, arg2, arg3, arg4):
     # Create a new folder for the current execution inside the "trace" folder
-    folder_name = "./trace/_{}_{}_{}_{}_".format(str(arg1), str(arg2), str(arg3), str(arg4))
+    trace_folder_name = "./trace/_{}_{}_{}_{}_".format(str(arg1), str(arg2), str(arg3), str(arg4))
+    syn_folder_name = "./../non_blocking_emulator/trace_syn/"
 
-    os.makedirs(folder_name, exist_ok=True)
+    os.makedirs(trace_folder_name, exist_ok=True)
+    os.makedirs(syn_folder_name, exist_ok=True)
 
     subprocess.check_call(['python', './generate_zipf_input.py', str(int(arg1)), str(arg2), str(arg3), str(arg4)])
 
@@ -32,10 +28,17 @@ def main(arg1, arg2, arg3, arg4):
         time.sleep(1)
         print("sleep 2")
 
-    # Move the files to the newly created folder and delete them from the main folder
-    shutil.move(input_file_name, os.path.join(folder_name, os.path.basename(input_file_name)))
-    shutil.move(output_file_name, os.path.join(folder_name, os.path.basename(output_file_name)))
+    # Move the 'syn' file to the 'non_blocking/trace_syn' folder
+    shutil.move(output_file_name, os.path.join(syn_folder_name, os.path.basename(output_file_name)))
+
+    # Remove the original 'trace' folder and all its contents
+    shutil.rmtree(trace_folder_name)
+
+    os.remove(input_file_name)
 
 
 if __name__ == "__main__":
     main(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
+
+trace_file_name = "./trace"
+shutil.rmtree(trace_file_name)
