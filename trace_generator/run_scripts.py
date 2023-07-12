@@ -76,5 +76,3 @@ if __name__ == "__main__":
 
             file.write(' '.join(line) + '\n')
     subprocess.check_call(['python', './Utils/rm_all.py'])
-
-

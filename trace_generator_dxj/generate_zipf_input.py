@@ -8,6 +8,7 @@ import sys
 num_packets = int(sys.argv[1])
 time = int(sys.argv[2])
 num_flows = int(sys.argv[3])
+i = int(sys.argv[4])
 
 # num_packets = 10000
 # time = 20000
@@ -24,7 +25,8 @@ normalized_zipf_distribution = (np.ceil(normalized_zipf_distribution).astype(int
 # 调一下综述
 # normalized_zipf_distribution[-1] = num_packets - sum(normalized_zipf_distribution[:-1])
 
-with open("./input_zipf.txt", "w") as f:
+file_name = ("./input_{}.txt".format(i))
+with open(file_name, "w") as f:
     f.write(str(num_packets) + '\n')
     f.write(str(time) + '\n')
     f.write(str(num_flows) + '\n')
@@ -32,4 +34,3 @@ with open("./input_zipf.txt", "w") as f:
     for i in range(num_flows):
         num_packets_in_flow = normalized_zipf_distribution[i]
         f.write(str(i) + " " + str(num_packets_in_flow) + "\n")
-
