@@ -77,17 +77,17 @@ public:
     Experiment(int type, int period, std::string trace_path, std::string sub_dir) : m_device(type, period, sub_dir), m_packet_generator(period, trace_path)
     {
         m_device.initialize();
-        elapse_info_out.open(sub_dir + "\\time_elapse.txt", std::ios_base::out);
+        elapse_info_out.open(sub_dir + "time_elapse.txt", std::ios_base::out);
     }
     Experiment(int type, int period, std::string trace_path, std::string sub_dir, std::uint32_t if_clk) : m_device(type, period, sub_dir), m_packet_generator(trace_path)
     {
         m_device.initialize();
-        elapse_info_out.open(sub_dir + "\\time_elapse.txt", std::ios_base::out);
+        elapse_info_out.open(sub_dir + "time_elapse.txt", std::ios_base::out);
     }
     Experiment(int type, std::string trace_path, std::string sub_dir) : m_device(type, sub_dir), m_packet_generator(trace_path)
     {
         m_device.initialize();
-        elapse_info_out.open(sub_dir + "\\time_elapse.txt", std::ios_base::out);
+        elapse_info_out.open(sub_dir + "time_elapse.txt", std::ios_base::out);
     }
     Experiment(double lambda, double alpha = 1.01)
         : m_packet_generator(lambda, alpha)

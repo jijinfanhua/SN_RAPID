@@ -326,7 +326,7 @@ public:
 
         parent_path = fs_path.parent_path().string();
 
-        file_name = parent_path + "\\" + file_without_extension + "_simple.txt";
+        file_name = parent_path + "/" + file_without_extension + "_simple.txt";
 
 
         //file_name = "C:\\Users\\PC\\Desktop\\RAPID-SIM2\\test_trace\\trace_" + type + ".txt";
@@ -609,6 +609,7 @@ public:
                 if (packet_guider[round_pointer]) {
                     pkt = packets.at(cnt_pkt_snd);
                     cnt_pkt_snd++;
+
                     round_pointer = (round_pointer + 1) % 100;
 
                     pkt_clk << pkt.m_key << " " << g_clock << std::endl;

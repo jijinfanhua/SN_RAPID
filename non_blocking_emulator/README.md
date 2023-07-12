@@ -1,9 +1,7 @@
 # RAPID-SIM
  A simulator for RAPID
 
-将生成的output.txt放在trace文件夹下面，同时修改RapidSimulator.cpp里面的trace_path
-> std::string trace_path = parent_dir + "output3.txt"; output3.txt修改成自己生成的output
-> 
-> 运行完成之后，运行trace文件夹下的python文件，即可得到“两个队列长度”
-> 
-> 其他信息在“direct_single_topk_output3.txt”中
+1. 请将生成的trace命名为"syn_[pkt_num]\_[flow_num]\_[cycle_num]_[zipfa].txt"
+2. 将工程生成的"RAPID-SIM.exe"放置到non_blocking_emulator根目录下；
+3. 命令：RAPID-SIM.exe 1 [trace_name]
+4. 运行完成后，运行"get_average_queue_length.py [trace_name]"
