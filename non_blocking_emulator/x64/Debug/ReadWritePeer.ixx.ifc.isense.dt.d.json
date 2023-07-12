@@ -1,0 +1,55 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\s\\desktop\\infocom2024\\non_blocking_emulator\\readwritepeer.ixx",
+        "ProvidedModule": "rapid.ReadWritePeer",
+        "Includes": [],
+        "ImportedModules": [
+            {
+                "Name": "rapid.Packet",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\Packet.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.Pir",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\Pir.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.Piw",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\Piw.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.FrontScheduler",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\FrontScheduler.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.VirtualPipeline",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\VirtualPipeline.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.Device",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\Device.ixx.ifc.dt"
+            },
+            {
+                "Name": "std",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\std.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.LinkedPacketQueue",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\LinkedPacketQueue.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.RoundRobinQueue",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\RoundRobinQueue.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.BlockQueue",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\BlockQueue.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.PacketQueue",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\PacketQueue.ixx.ifc.dt"
+            }
+        ],
+        "ImportedHeaderUnits": []
+    }
+}

@@ -1,0 +1,44 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "x64\\Debug\\SongPipeline.ixx.obj",
+            "outputs": [
+                "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\vc143.pdb",
+                "x64\\Debug\\",
+                "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\SongPipeline.ixx.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "rapid.SongPipeline",
+                    "source-path": "c:\\users\\s\\desktop\\infocom2024\\non_blocking_emulator\\songpipeline.ixx",
+                    "is-interface": true
+                }
+            ],
+            "requires": [
+                {
+                    "logical-name": "rapid.Packet"
+                },
+                {
+                    "logical-name": "rapid.PacketQueue"
+                },
+                {
+                    "logical-name": "rapid.Device"
+                },
+                {
+                    "logical-name": "rapid.VirtualPipeline"
+                },
+                {
+                    "logical-name": "rapid.SeqIdMarker"
+                },
+                {
+                    "logical-name": "rapid.SongPiw"
+                },
+                {
+                    "logical-name": "std"
+                }
+            ]
+        }
+    ]
+}

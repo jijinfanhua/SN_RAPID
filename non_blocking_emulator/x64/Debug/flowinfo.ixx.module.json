@@ -1,0 +1,26 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "x64\\Debug\\FlowInfo.ixx.obj",
+            "outputs": [
+                "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\vc143.pdb",
+                "x64\\Debug\\",
+                "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\FlowInfo.ixx.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "rapid.FlowInfo",
+                    "source-path": "c:\\users\\s\\desktop\\infocom2024\\non_blocking_emulator\\flowinfo.ixx",
+                    "is-interface": true
+                }
+            ],
+            "requires": [
+                {
+                    "logical-name": "std"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "x64\\Debug\\VirtualPipeline.ixx.obj",
+            "outputs": [
+                "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\vc143.pdb",
+                "x64\\Debug\\",
+                "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\VirtualPipeline.ixx.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "rapid.VirtualPipeline",
+                    "source-path": "c:\\users\\s\\desktop\\infocom2024\\non_blocking_emulator\\virtualpipeline.ixx",
+                    "is-interface": true
+                }
+            ],
+            "requires": [
+                {
+                    "logical-name": "rapid.Packet"
+                },
+                {
+                    "logical-name": "rapid.BlockQueue"
+                },
+                {
+                    "logical-name": "rapid.Device"
+                },
+                {
+                    "logical-name": "std"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "x64\\Debug\\PacketAnalyzer.ixx.obj",
+            "outputs": [
+                "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\vc143.pdb",
+                "x64\\Debug\\",
+                "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\PacketAnalyzer.ixx.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "rapid.PacketAnalyzer",
+                    "source-path": "c:\\users\\s\\desktop\\infocom2024\\non_blocking_emulator\\packetanalyzer.ixx",
+                    "is-interface": true
+                }
+            ],
+            "requires": [
+                {
+                    "logical-name": "rapid.Packet"
+                },
+                {
+                    "logical-name": "std"
+                }
+            ]
+        }
+    ]
+}

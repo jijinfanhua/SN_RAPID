@@ -1,0 +1,17 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\users\\s\\desktop\\infocom2024\\non_blocking_emulator\\songpipeline.ixx",
+        "ProvidedModule": "rapid.SongPipeline",
+        "ImportedModules": [
+            "rapid.Packet",
+            "rapid.PacketQueue",
+            "rapid.Device",
+            "rapid.VirtualPipeline",
+            "rapid.SeqIdMarker",
+            "rapid.SongPiw",
+            "std"
+        ],
+        "ImportedHeaderUnits": []
+    }
+}

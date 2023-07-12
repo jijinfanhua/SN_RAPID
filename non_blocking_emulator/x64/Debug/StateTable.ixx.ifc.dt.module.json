@@ -1,0 +1,12 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\users\\s\\desktop\\infocom2024\\non_blocking_emulator\\statetable.ixx",
+        "ProvidedModule": "rapid.StateTable",
+        "ImportedModules": [
+            "rapid.Packet",
+            "std"
+        ],
+        "ImportedHeaderUnits": []
+    }
+}

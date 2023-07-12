@@ -1,0 +1,23 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\s\\desktop\\infocom2024\\non_blocking_emulator\\seqidmarker.ixx",
+        "ProvidedModule": "rapid.SeqIdMarker",
+        "Includes": [],
+        "ImportedModules": [
+            {
+                "Name": "rapid.Packet",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\Packet.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.Device",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\Device.ixx.ifc.dt"
+            },
+            {
+                "Name": "std",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\std.ixx.ifc.dt"
+            }
+        ],
+        "ImportedHeaderUnits": []
+    }
+}

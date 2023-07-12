@@ -1,0 +1,16 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\users\\s\\desktop\\infocom2024\\non_blocking_emulator\\rapidsimulator.cpp",
+        "ProvidedModule": "",
+        "ImportedModules": [
+            "rapid.experimental",
+            "rapid.experimental.bench",
+            "rapid.ReadWritePeer",
+            "rapid.SongPipeline",
+            "rapid.ImprovedSongPipeline",
+            "std"
+        ],
+        "ImportedHeaderUnits": []
+    }
+}

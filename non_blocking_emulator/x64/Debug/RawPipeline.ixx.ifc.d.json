@@ -1,0 +1,35 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\s\\desktop\\infocom2024\\non_blocking_emulator\\rawpipeline.ixx",
+        "ProvidedModule": "rapid.experimental.RawPipeline",
+        "Includes": [],
+        "ImportedModules": [
+            {
+                "Name": "rapid.Pipeline",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\Pipeline.ixx.ifc"
+            },
+            {
+                "Name": "rapid.BlockQueue",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\BlockQueue.ixx.ifc"
+            },
+            {
+                "Name": "rapid.Device",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\Device.ixx.ifc"
+            },
+            {
+                "Name": "rapid.Packet",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\Packet.ixx.ifc"
+            },
+            {
+                "Name": "std",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\std.ixx.ifc"
+            },
+            {
+                "Name": "rapid.ReadWritePeer",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\ReadWritePeer.ixx.ifc"
+            }
+        ],
+        "ImportedHeaderUnits": []
+    }
+}

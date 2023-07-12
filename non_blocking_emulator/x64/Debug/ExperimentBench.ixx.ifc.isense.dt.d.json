@@ -1,0 +1,87 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\s\\desktop\\infocom2024\\non_blocking_emulator\\experimentbench.ixx",
+        "ProvidedModule": "rapid.experimental.bench",
+        "Includes": [],
+        "ImportedModules": [
+            {
+                "Name": "rapid.SongPipeline",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\SongPipeline.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.ImprovedSongPipeline",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\ImprovedSongPipeline.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.experimental",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\Experiment.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.experimental.OverlapPeer",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\OverlapPeer.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.experimental.RawPipeline",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\RawPipeline.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.experimental.SinglePeer",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\SinglePeer.ixx.ifc.dt"
+            },
+            {
+                "Name": "std",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\std.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.Device",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\Device.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.Packet",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\Packet.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.FlowInfo",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\FlowInfo.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.PacketGenerator",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\PacketGenerator.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.PacketAnalyzer",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\PacketAnalyzer.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.PacketQueue",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\PacketQueue.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.SongReadWritePeer",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\SongReadWritePeer.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.VirtualPipeline",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\VirtualPipeline.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.BlockQueue",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\BlockQueue.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.SongPir",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\SongPir.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.StateTable",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\StateTable.ixx.ifc.dt"
+            },
+            {
+                "Name": "rapid.SongPiw",
+                "BMI": "C:\\Users\\s\\Desktop\\infocom2024\\non_blocking_emulator\\x64\\Debug\\SongPiw.ixx.ifc.dt"
+            }
+        ],
+        "ImportedHeaderUnits": []
+    }
+}
