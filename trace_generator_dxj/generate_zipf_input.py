@@ -24,7 +24,7 @@ normalized_zipf_distribution = (np.ceil(normalized_zipf_distribution).astype(int
 # 调一下综述
 # normalized_zipf_distribution[-1] = num_packets - sum(normalized_zipf_distribution[:-1])
 
-file_name = ("./input {} {} {} {}.txt".format(num_packets, num_flows, time, zipfa))
+file_name = ("./input_{}_{}_{}_{}.txt".format(num_packets, num_flows, time, zipfa))
 with open(file_name, "w") as f:
     f.write(str(num_packets) + '\n')
     f.write(str(time) + '\n')
