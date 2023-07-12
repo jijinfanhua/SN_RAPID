@@ -1,5 +1,6 @@
 import os
 import sys
+import re
 
 # 首先获得数据包所在的时钟，然后读每个时钟的队列长度
 
@@ -49,7 +50,33 @@ print("average queue length: {}".format(mean_value))
 
 filename_without_extension, extension = os.path.splitext(trace_name)
 
+# 打开文件并读取内容
+with open("./trace_syn/" + 'direct_single_topk_' + filename_without_extension + '.txt', 'r') as output:
+    text = output.read()
+
+# 定义正则表达式模式
+drop_pattern = r'Drop\s+%\s+=\s+(\d+\.\d+)'
+time_pattern = r'average elapse time\s+=\s+(\d+)'
+
+# 使用re.findall查找匹配的模式
+drop = re.findall(drop_pattern, text)
+if drop:
+    drop = float(drop[0])
+else:
+    print("No match for Drop % found.")
+
+elapse_time = re.findall(time_pattern, text)
+if elapse_time:
+    elapse_time = int(elapse_time[0])
+else:
+    print("No match for average elapse time found.")
+
+print(f'Drop % = {drop}, average elapse time = {elapse_time}')
+
 with open("./trace_syn/" + filename_without_extension + '_queue_info.txt', 'w') as t:
     t.write("packet average queue length: {}\n".format(queue_sum / len(pkt_clk)))
     t.write("average queue length: {}\n".format(mean_value))
+
+with open("./result.txt", 'a') as res:
+    res.write(f'{filename_without_extension}, {drop}, {elapse_time}, {queue_sum / len(pkt_clk)}, {mean_value}\n')
 

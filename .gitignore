@@ -7,6 +7,7 @@
 ./non_blocking_emulator/.vs/
 ./non_blocking_emulator/x64
 ./non_blocking_emulator/.idea
+./non_blocking_emulator/Debug
 ./non_blocking_emulator/trace/.idea
 
 ./non_blocking_emulator/trace_syn/*
