@@ -10,13 +10,10 @@ import os
 import shutil
 import time
 
-# arg1 package num
-# arg2 time
-# arg3 flow num
-# arg4 zipf_a
+
 def main(arg1, arg2, arg3, arg4):
     # Create a new folder for the current execution inside the "trace" folder
-    folder_name = "./trace/pktnum_{}time_{}flownum_{}zipfa_{}".format(str(arg1), str(arg2), str(arg3), str(arg4))
+    folder_name = "./trace/_{}_{}_{}_{}_".format(str(arg1), str(arg2), str(arg3), str(arg4))
 
     os.makedirs(folder_name, exist_ok=True)
 
