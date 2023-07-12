@@ -10,5 +10,5 @@
 ./non_blocking_emulator/Debug
 ./non_blocking_emulator/trace/.idea
 
-./non_blocking_emulator/trace_syn/*
-./non_blocking_emulator/RAPID-SIM.exe
+non_blocking_emulator/trace_syn/*
+non_blocking_emulator/RAPID-SIM.exe
