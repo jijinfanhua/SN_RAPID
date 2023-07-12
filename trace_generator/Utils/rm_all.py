@@ -9,5 +9,5 @@ file_to_delete = [
 
 pathname = "."
 
-for i in range(0,3):
+for i in range(0,2):
     os.remove(os.path.join(pathname,file_to_delete[i]))

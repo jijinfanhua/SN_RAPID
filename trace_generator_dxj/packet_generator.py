@@ -1,5 +1,6 @@
 import numpy as np
 from tqdm import trange
+import sys
 
 # input format:
 #   1. number of packets
@@ -39,6 +40,6 @@ def generate_packets(input_file, output_file):
 if __name__ == "__main__":
     # input_file = os.path.join(os.getcwd(), "input.txt")
     # output_file = os.path.join(os.getcwd(), "output.txt")
-    input_file = "./input_zipf.txt"
-    output_file = "./output3.txt"
+    input_file = sys.argv[1]
+    output_file = sys.argv[2]
     generate_packets(input_file, output_file)
