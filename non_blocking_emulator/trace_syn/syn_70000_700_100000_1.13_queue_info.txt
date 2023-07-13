@@ -1,2 +1,0 @@
-packet average queue length: 10.911557142857143
-average queue length: 10.923359233592336

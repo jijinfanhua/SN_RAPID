@@ -1,4 +1,0 @@
-Recv Pkt = 59998
-Send Pkt = 51253
-Drop  %  = 0.145755
-average elapse time = 419
