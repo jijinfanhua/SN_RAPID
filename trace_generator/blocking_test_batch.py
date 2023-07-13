@@ -26,7 +26,7 @@ def blocking_scheme_find_next(trace_name, N=4, PIPE_LEN=88, packets=None):
     pkt_idx = 0  # 从0开始取pkt
     queue_pointer = 0  # 轮询指针
 
-    print(f"packet num: {pkt_num}")
+    print(f"find_next: {trace_name}, packet num: {pkt_num}")
 
     pkt_drop_num = 0
     drop_flag = 0
@@ -93,8 +93,8 @@ def blocking_scheme_find_next(trace_name, N=4, PIPE_LEN=88, packets=None):
     avg_packet_queue_length = sum(packet_queue_lengths) / len(packet_queue_lengths)
     avg_clock_queue_length = sum(clock_queue_lengths) / len(clock_queue_lengths)
 
-    print(pkt_drop_num)
-    record_f = open("./blocking_next_result.txt", 'a')
+    print(f"packet drop: {pkt_drop_num}")
+    record_f = open("../blocking_emulator/blocking_next_result.txt", 'a')
     record_f.write(f'{trace_name} {PIPE_LEN}, {N}, {drop_flag}, {pkt_drop_num/len(packets)}, {avg_latency}, {avg_packet_queue_length}, {avg_clock_queue_length}\n')
     record_f.close()
 
@@ -109,7 +109,7 @@ def blocking_scheme_find_schedule(trace_name, N=4, PIPE_LEN=88, packets=None):
     pkt_idx = 0  # 从0开始取pkt
     queue_pointer = 0  # 轮询指针
 
-    print(f"packet num: {pkt_num}")
+    print(f"find_schedule: {trace_name}, packet num: {pkt_num}")
 
     pkt_drop_num = 0
     drop_flag = 0
@@ -123,8 +123,6 @@ def blocking_scheme_find_schedule(trace_name, N=4, PIPE_LEN=88, packets=None):
     while pkt_num > 0 or any(q for q in queues if q):  # 任何一个queue不空就需要走下去
 
         if pkt_num > 0:
-            if pkt_num % 1000000 == 0:
-                print(f"pkt_num: {pkt_num}")
             if packets[pkt_idx][4] == g_clock:
                 cur = packets[pkt_idx][0] % N
                 if len(queues[cur]) < maxlen:
@@ -178,7 +176,8 @@ def blocking_scheme_find_schedule(trace_name, N=4, PIPE_LEN=88, packets=None):
     avg_packet_queue_length = sum(packet_queue_lengths) / len(packet_queue_lengths)
     avg_clock_queue_length = sum(clock_queue_lengths) / len(clock_queue_lengths)
 
-    record_f = open("./blocking_schedule_result.txt", 'a')
+    print(f"packet drop: {pkt_drop_num}")
+    record_f = open("../blocking_emulator/blocking_schedule_result.txt", 'a')
     record_f.write(f'{trace_name} {PIPE_LEN}, {N}, {drop_flag}, {pkt_drop_num / len(packets)}, {avg_latency}, {avg_packet_queue_length}, {avg_clock_queue_length}\n')
     record_f.close()
 
