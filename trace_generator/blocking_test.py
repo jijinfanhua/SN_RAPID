@@ -94,7 +94,7 @@ def blocking_scheme(N=4, PIPE_LEN=76):
                     pkt = queues[queue_pointer][0]
                     pkt[2] = g_clock - pkt[2]
                     # print(g_clock)
-                    packet_f.write(f"{pkt[0]} {pkt[1]} {pkt[2]} {pkt[3]} {g_clock}\n")
+                    # packet_f.write(f"{pkt[0]} {pkt[1]} {pkt[2]} {pkt[3]} {g_clock}\n")
                     queues[queue_pointer].popleft()
                     dirty_cam[pkt[0]] = g_clock
             queue_pointer = (queue_pointer + 1) % N
