@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 def main(arg1, arg2, arg3):
     # 运行第一个脚本
-    subprocess.check_call(['python', './generate_zipf_input.py', str(arg1), str(arg2), str(arg3)])
+    subprocess.check_call(['python', './zipf_input.py', str(arg1), str(arg2), str(arg3)])
 
     # 等待文件生成
     while not os.path.isfile('./input_zipf.txt'):

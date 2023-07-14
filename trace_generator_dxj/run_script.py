@@ -13,7 +13,7 @@ def main(arg1, arg2, arg3, arg4):
     os.makedirs(trace_folder_name, exist_ok=True)
     os.makedirs(syn_folder_name, exist_ok=True)
 
-    subprocess.check_call(['python', './generate_zipf_input.py', str(int(arg1)), str(arg2), str(arg3), str(arg4)])
+    subprocess.check_call(['python', './zipf_input.py', str(int(arg1)), str(arg2), str(arg3), str(arg4)])
 
     input_file_name = "./input_{}_{}_{}_{}.txt".format(str(arg1), str(arg2), str(arg3), str(arg4))
     output_file_name = "./syn_{}_{}_{}_{}.txt".format(str(arg1), str(arg2), str(arg3), str(arg4))

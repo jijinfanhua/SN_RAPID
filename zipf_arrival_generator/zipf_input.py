@@ -1,18 +1,15 @@
 import numpy as np
 import sys
 import matplotlib.pyplot as plt
-# 包的数量
-# 时间,确定吞吐
-# 流的数量
 
 num_packets = int(sys.argv[1])
 num_flows = int(sys.argv[2])
 time = int(sys.argv[3])
 zipfa = float(sys.argv[4])
-# num_packets = 10000
-# time = 20000
-# num_flows = 1000
 
+# 程序的目的是为了生成大流和小流,可以先生成num_flow个满足zipf分布的数
+# 然后把这些数归一化等,乘到总包数上面去
+# 得到的数字是包的数量满足zipf分布,有flow_num个
 # zipf分布
 zipf_distribution = np.random.zipf(zipfa, num_flows)
 # 对zipf分布的值进行缩放
@@ -27,13 +24,12 @@ normalized_zipf_distribution = (np.ceil(normalized_zipf_distribution).astype(int
 # normalized_zipf_distribution.sort()
 # plt.plot(normalized_zipf_distribution)
 # plt.show()
-
-
-file_name = ("./input_{}_{}_{}_{}.txt".format(num_packets, num_flows, time, zipfa))
+# #
+file_name = ("./input_zipf.txt".format(num_packets, num_flows, time, zipfa))
 with open(file_name, "w") as f:
     f.write(str(num_packets) + '\n')
-    f.write(str(time) + '\n')
     f.write(str(num_flows) + '\n')
+    f.write(str(time) + '\n')
 
     for i in range(num_flows):
         num_packets_in_flow = normalized_zipf_distribution[i]
