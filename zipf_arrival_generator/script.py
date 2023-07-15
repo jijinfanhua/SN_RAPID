@@ -14,7 +14,7 @@ def main(arg1, arg2, arg3, arg4):
         time.sleep(1)
 
     # 运行第二个脚本
-    subprocess.check_call(['python', './跑不动,完全跑不动generate_output.py','./input_zipf.txt','./output.txt'])
+    subprocess.check_call(['python', './_unrunable_version_.py','./input_zipf.txt','./output.txt'])
     #
     # # 等待文件生成
     while not os.path.isfile('./output.txt'):

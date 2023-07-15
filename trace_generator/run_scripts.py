@@ -14,7 +14,7 @@ def main(arg1, arg2, arg3):
         time.sleep(1)
 
     # 运行第二个脚本
-    subprocess.check_call(['python', './packet_generator.py'])
+    subprocess.check_call(['python', './poisson_packet_generator.py'])
 
     # 等待文件生成
     while not os.path.isfile('./output3.txt'):
