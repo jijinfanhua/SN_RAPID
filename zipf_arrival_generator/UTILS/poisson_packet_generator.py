@@ -52,6 +52,6 @@ def generate_packets(input_file, output_file):
 
 
 if __name__ == "__main__":
-    input_file = "./input_zipf.txt"
-    output_file = "./output.txt"
+    input_file = "../input_zipf.txt"
+    output_file = "../../comparsion/new_output.txt"
     generate_packets(input_file, output_file)

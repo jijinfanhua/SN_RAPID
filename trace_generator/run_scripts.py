@@ -43,7 +43,7 @@ def main(arg1, arg2, arg3):
         os.makedirs(new_folder, exist_ok=True)
         files_to_copy = [
             './input_zipf.txt',
-            './output3.txt',
+            './output3_2292.txt',
          #   './record1_1.txt',
             './whether_packet_drop.txt'
         ]

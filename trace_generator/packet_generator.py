@@ -15,8 +15,9 @@ def generate_packets(input_file, output_file):
     _input = open(input_file, "r")
     _output = open(output_file, "w")
     num_packets = int(_input.readline())
-    total_time = int(_input.readline())
     num_flows = int(_input.readline())
+    total_time = int(_input.readline())
+
     flow_id = []
     flow_rate = []
     for i in range(num_flows):

@@ -46,7 +46,7 @@
 #
 # if __name__ == "__main__":
 #     input_file = "./input_zipf.txt"
-#     output_file = "./output3.txt"
+#     output_file = "./output3_2292.txt"
 #     generate_packets(input_file, output_file)
 
 import numpy as np
@@ -107,6 +107,6 @@ def generate_packets(input_file, output_file):
 
 if __name__ == "__main__":
     input_file = "./input_zipf.txt"
-    output_file = "./output3.txt"
+    output_file = "./output3_2292.txt"
     generate_packets(input_file, output_file)
 #

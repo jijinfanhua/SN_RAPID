@@ -35,21 +35,48 @@ def generate_packets(input_file, output_file):
         arrival_time.append(int(time))
 
     for i in range(num_flows):
-        lambda_val = flow_rate[i] / flow_time[i]
-        inter_arrival_times = np.random.poisson(1 / lambda_val, flow_rate[i])
+        lambda_val = flow_rate[i] / flow_time[i]    # 计算每个流的平均到达率，根据流量速率和持续时间
+        inter_arrival_times = np.random.poisson(0.5 / lambda_val, flow_rate[i])
         arrival_times = np.cumsum(inter_arrival_times) + arrival_time[i]
         arrival_times = arrival_times[arrival_times < arrival_time[i + 1]]
 
         for packet_time in arrival_times:
             out_file.write(f"{packet_time} {flow_id[i]}\n")
 
+
     out_file.close()
     # 在这个时间内,要求每个流的到达时间满足正太分布
 
     # 将时间和到达的数据包对应的流输出到output文件中
 
+# def remove_duplicate_lines(file_path):
+#     lines = []
+#     with open(file_path, 'r') as file:
+#         for line in file:
+#             if line not in lines:
+#                 lines.append(line)
+#     with open(file_path, 'w') as file:
+#         for line in lines:
+#             file.write(line)
+
+def modify_file(input_filename, output_filename):
+    with open(input_filename, 'r') as in_file:
+        lines = in_file.readlines()
+
+    # Parse lines into pairs of (int, int)
+    data = [(int(x.split()[0]), int(x.split()[1])) for x in lines]
+
+    for i in range(1, len(data)):
+        while data[i][0] == data[i-1][0]:
+            data[i] = (data[i][0] + 1, data[i][1])
+
+    with open(output_filename, 'w') as out_file:
+        for item in data:
+            out_file.write(f"{item[0]} {item[1]}\n")
+
 if __name__ == "__main__":
     input_file = "./input_zipf.txt"
-    output_file = "./output.txt"
+    output_file = "./output1.txt"
     generate_packets(input_file, output_file)
-
+    # remove_duplicate_lines(output_file)
+    modify_file('output1.txt', '../comparsion/modified_output1_2.txt')

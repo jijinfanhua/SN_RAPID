@@ -22,7 +22,7 @@ def main(arg1, arg2, arg3, arg4):
         time.sleep(1)
         print("sleep 1")
 
-    subprocess.check_call(['python', './poisson_packet_generator.py', input_file_name, output_file_name])
+    subprocess.check_call(['python', './packet_generator.py', input_file_name, output_file_name])
 
     while not os.path.isfile(output_file_name):
         time.sleep(1)
