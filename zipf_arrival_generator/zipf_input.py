@@ -25,7 +25,7 @@ normalized_zipf_distribution = (np.ceil(normalized_zipf_distribution).astype(int
 # plt.plot(normalized_zipf_distribution)
 # plt.show()
 # #
-file_name = ("./input_zipf.txt".format(num_packets, num_flows, time, zipfa))
+file_name = ("./input_{}_{}_{}_{}.txt".format(num_packets, num_flows, time, zipfa))
 with open(file_name, "w") as f:
     f.write(str(num_packets) + '\n')
     f.write(str(num_flows) + '\n')
