@@ -16,5 +16,5 @@ def plot_packets(output_file):
     plt.show()
 
 if __name__ == "__main__":
-    output_file = "./output.txt"
+    output_file = "../output.txt"
     plot_packets(output_file)
