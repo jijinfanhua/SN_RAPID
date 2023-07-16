@@ -172,6 +172,7 @@ public:
         m_packet_analyzer.reset();
         m_packet_generator.reset();
         m_device.reset();
+        g_clock = 0;
     }
 
     void print_info() {

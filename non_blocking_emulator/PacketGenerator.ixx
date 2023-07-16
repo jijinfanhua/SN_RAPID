@@ -602,13 +602,18 @@ public:
         auto pkt = Packet{};
         if (IF_CLK == 0) {
             if (cnt_pkt_snd == packets.size()) {
-                std::cout << "all pkts sent at" << g_clock << std::endl;
+                std::cout << "all pkts sent at " << g_clock << std::endl;
                 end_clk << g_clock << std::endl;
             }
             else {
                 if (packet_guider[round_pointer]) {
                     pkt = packets.at(cnt_pkt_snd);
                     cnt_pkt_snd++;
+
+                    if (cnt_pkt_snd == packets.size()) {
+                        std::cout << "all pkts sent at " << g_clock << std::endl;
+                        end_clk << g_clock << std::endl;
+                    }
 
                     round_pointer = (round_pointer + 1) % 100;
 
