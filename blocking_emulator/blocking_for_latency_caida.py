@@ -30,7 +30,7 @@ def distribute_points(n, total_positions=100):
     return positions
 
 
-def blocking_scheme(N=4, PIPE_LEN=76, throughput=20, packets=None, record_f=None, ):
+def blocking_scheme(N=4, PIPE_LEN=76, throughput=20, packets=None):
     # 使用列表推导式创建 N 个队列
     maxlen = math.ceil(128 / N)
     queues = [deque(maxlen=maxlen) for _ in range(N)]
@@ -62,7 +62,12 @@ def blocking_scheme(N=4, PIPE_LEN=76, throughput=20, packets=None, record_f=None
                 if len(queues[cur]) < maxlen:
                     pkt = packets[pkt_idx]
                     pkt[1] = g_clock
-                    pkt[2] = len(queues[cur])
+
+                    queue_len = 0
+                    for i in range(0, N):
+                        queue_len += len(queues[i])
+
+                    pkt[2] = queue_len #len(queues[cur])
                     queues[cur].append(pkt)
                 else:
                     flag = 1
@@ -114,8 +119,9 @@ def blocking_scheme(N=4, PIPE_LEN=76, throughput=20, packets=None, record_f=None
     avg_clock_queue_length = sum(clock_queue_lengths) / len(clock_queue_lengths)
 
     print(pkt_drop_num)
-    record_f.write('pipelen: {} N: {} drop_start: {} packet_drop_num: {} average_latency: {} packet_queue_length: {} clock_queue_length: {}\n'
-                   .format(PIPE_LEN, N, flag, pkt_drop_num, avg_latency, avg_packet_queue_length, avg_clock_queue_length))
+    return f"{PIPE_LEN} {N} {flag} {pkt_drop_num} {avg_latency} {avg_packet_queue_length} {avg_clock_queue_length}"
+    # record_f.write('pipelen: {} N: {} drop_start: {} packet_drop_num: {} average_latency: {} packet_queue_length: {} clock_queue_length: {}\n'
+    #                .format(PIPE_LEN, N, flag, pkt_drop_num, avg_latency, avg_packet_queue_length, avg_clock_queue_length))
 
 
 """
@@ -125,47 +131,48 @@ def blocking_scheme(N=4, PIPE_LEN=76, throughput=20, packets=None, record_f=None
     PIPE_LEN：指定流水线长度（处理器为单位），每个处理器为22硬件周期
 """
 if __name__ == "__main__":
-    trace_list = ["./trace/nic/baidu_build_trace_1_NIC_400W_from_5000W_simple.txt",
-                  "./trace/nic/baidu_build_trace_2_NIC_400W_from_5000W_simple.txt",
-                  "./trace/nic/baidu_build_trace_3_NIC_400W_from_5000W_simple.txt",
-                  "./trace/nic/baidu_build_trace_4_NIC_400W_from_5000W_simple.txt",
-                  "./trace/nic/baidu_build_trace_5_NIC_400W_from_5000W_simple.txt",
-                  "./trace/nic/baidu_build_trace_6_NIC_400W_from_5000W_simple.txt",
-                  "./trace/nic/baidu_build_trace_7_NIC_400W_from_5000W_simple.txt",
-                  "./trace/nic/caida_build_trace_2_NIC_400W_from_2000W_simple.txt",
-                  "./trace/nic/caida_build_trace_4_NIC_400W_from_2000W_simple.txt",
-                  "./trace/nic/caida_build_trace_6_NIC_400W_from_2000W_simple.txt",
-                  "./trace/nic/caida_build_trace_8_NIC_400W_from_2000W_simple.txt",
-                  "./trace/nic/caida_build_trace_10_NIC_400W_from_2000W_simple.txt",
-                  "./trace/nic/caida_build_trace_12_NIC_400W_from_2000W_simple.txt",
-                  "./trace/nic/caida_build_trace_14_NIC_400W_from_2000W_simple.txt",
-                  "./trace/nic/caida_build_trace_16_NIC_400W_from_2000W_simple.txt",
-                  "./trace/nic/caida_build_trace_18_NIC_400W_from_2000W_simple.txt",
-                  "./trace/nic/caida_build_trace_20_NIC_400W_from_2000W_simple.txt",
-                  "./trace/nic/caida_build_trace_22_NIC_400W_from_2000W_simple.txt",
-                  "./trace/nic/one_flow.txt"]
+    trace_list = ["../non_blocking_emulator/trace_real/baidu/res_topk_nic_14/baidu_build_trace_1_NIC_400W_from_5000W_simple.txt",
+                  "../non_blocking_emulator/trace_real/baidu/res_topk_nic_28/baidu_build_trace_2_NIC_400W_from_5000W_simple.txt",
+                  "../non_blocking_emulator/trace_real/baidu/res_topk_nic_42/baidu_build_trace_3_NIC_400W_from_5000W_simple.txt",
+                  "../non_blocking_emulator/trace_real/baidu/res_topk_nic_56/baidu_build_trace_4_NIC_400W_from_5000W_simple.txt",
+                  "../non_blocking_emulator/trace_real/baidu/res_topk_nic_70/baidu_build_trace_5_NIC_400W_from_5000W_simple.txt",
+                  "../non_blocking_emulator/trace_real/baidu/res_topk_nic_84/baidu_build_trace_6_NIC_400W_from_5000W_simple.txt",
+                  "../non_blocking_emulator/trace_real/baidu/res_topk_nic_98/baidu_build_trace_7_NIC_400W_from_5000W_simple.txt",
+                  "../non_blocking_emulator/trace_real/caida/res_topk_nic_9/caida_real_build_trace_2_NIC_400W_from_2000W_simple.txt",
+                  "../non_blocking_emulator/trace_real/caida/res_topk_nic_18/caida_real_build_trace_4_NIC_400W_from_2000W_simple.txt",
+                  "../non_blocking_emulator/trace_real/caida/res_topk_nic_27/caida_real_build_trace_6_NIC_400W_from_2000W_simple.txt",
+                  "../non_blocking_emulator/trace_real/caida/res_topk_nic_36/caida_real_build_trace_8_NIC_400W_from_2000W_simple.txt",
+                  "../non_blocking_emulator/trace_real/caida/res_topk_nic_45/caida_real_build_trace_10_NIC_400W_from_2000W_simple.txt",
+                  "../non_blocking_emulator/trace_real/caida/res_topk_nic_54/caida_real_build_trace_12_NIC_400W_from_2000W_simple.txt",
+                  "../non_blocking_emulator/trace_real/caida/res_topk_nic_63/caida_real_build_trace_14_NIC_400W_from_2000W_simple.txt",
+                  "../non_blocking_emulator/trace_real/caida/res_topk_nic_72/caida_real_build_trace_16_NIC_400W_from_2000W_simple.txt",
+                  "../non_blocking_emulator/trace_real/caida/res_topk_nic_81/caida_real_build_trace_18_NIC_400W_from_2000W_simple.txt",
+                  "../non_blocking_emulator/trace_real/caida/res_topk_nic_90/caida_real_build_trace_20_NIC_400W_from_2000W_simple.txt",
+                  "../non_blocking_emulator/trace_real/caida/res_topk_nic_99/caida_real_build_trace_22_NIC_400W_from_2000W_simple.txt"]
 
-    throughputs = [14, 28, 42, 56, 70, 84, 98, 9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99, 45]
+    throughputs = [14, 28, 42, 56, 70, 84, 98, 9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99]
 
-    for k in range(0, 19):
+    for k in range(0, len(trace_list)):
         TRACE_FILE_NAME = trace_list[k]
         base_name = os.path.basename(trace_list[k])
         file_name, file_extension = os.path.splitext(base_name)
 
         print("Now, {} is running!".format(file_name))
 
-        RES_FILE_NAME = "./res/" + file_name + "_result.txt"
+        # RES_FILE_NAME = "./res/" + file_name + "_result.txt"
+        RES_FILE_NAME = "./res/" + "result.txt"
 
         packets = get_trace(TRACE_FILE_NAME)
-
-        record_f = open(RES_FILE_NAME, 'w')
-
         queue_nums = [8]  # , 2, 4, 8, 16, 32, 64]
+
         for i in queue_nums:
             for j in range(4, 5):
-                print('N=', i, ', j=', j, ' running!')
-                blocking_scheme(N=i, PIPE_LEN=(j * 21 + j), throughput=throughputs[k], packets=packets, record_f=record_f)
-                print('N=', i, ', j=', j, ' end!\n----------------------')
+                print(file_name, 'N=', i, ', j=', j, ' running!')
+                res = blocking_scheme(N=i, PIPE_LEN=(j * 21 + j), throughput=throughputs[k], packets=packets)
 
-        record_f.close()
+                record_f = open(RES_FILE_NAME, 'a')
+                record_f.write(f"{file_name} {res}\n")
+                record_f.close()
+
+                print(file_name, 'N=', i, ', j=', j, ' end!\n----------------------')
         del packets
