@@ -14,3 +14,4 @@ non_blocking_emulator/trace_syn/*
 non_blocking_emulator/RAPID-SIM.exe
 non_blocking_emulator/trace_real/*
 non_blocking_emulator/trace/*
+non_blocking_emulator/trace_syn_burst/*
