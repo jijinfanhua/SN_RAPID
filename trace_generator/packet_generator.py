@@ -15,16 +15,18 @@ def generate_packets(input_file, output_file):
     _input = open(input_file, "r")
     _output = open(output_file, "w")
     num_packets = int(_input.readline())
-    num_flows = int(_input.readline())
     total_time = int(_input.readline())
+    num_flows = int(_input.readline())
 
     flow_id = []
     flow_rate = []
+
     for i in range(num_flows):
         tmp= _input.readline().split()
         flow_id.append(int(tmp[0]))
         flow_rate.append(int(tmp[1]))
     _input.close()
+
     # generate packets
     total_rate = np.sum(flow_rate)
     flow_ratio = [rate / total_rate for rate in flow_rate]
