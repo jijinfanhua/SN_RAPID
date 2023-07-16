@@ -20,6 +20,7 @@ def generate_packets(input_file, output_file):
     num_flows = int(_input.readline())
     flow_id = []
     flow_rate = []
+    # 存储流的id和流的速率
     for i in range(num_flows):
         tmp= _input.readline().split()
         flow_id.append(int(tmp[0]))

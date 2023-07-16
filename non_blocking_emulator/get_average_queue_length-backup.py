@@ -8,7 +8,7 @@ pkt_clk = []
 
 # 该文件需要参数化
 
-trace_name = sys.argv[1] #"output3.txt"
+trace_name = sys.argv[1] #"output3_2292.txt"
 
 with open("./trace_syn/" + trace_name, 'r') as f:
     while True:

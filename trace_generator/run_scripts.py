@@ -7,14 +7,14 @@ import matplotlib.pyplot as plt
 
 def main(arg1, arg2, arg3):
     # 运行第一个脚本
-    subprocess.check_call(['python', './generate_zipf_input.py', str(arg1), str(arg2), str(arg3)])
+    subprocess.check_call(['python', './zipf_input.py', str(arg1), str(arg2), str(arg3)])
 
     # 等待文件生成
     while not os.path.isfile('./input_zipf.txt'):
         time.sleep(1)
 
     # 运行第二个脚本
-    subprocess.check_call(['python', './packet_generator.py'])
+    subprocess.check_call(['python', './poisson_packet_generator.py'])
 
     # 等待文件生成
     while not os.path.isfile('./output3.txt'):
@@ -43,7 +43,7 @@ def main(arg1, arg2, arg3):
         os.makedirs(new_folder, exist_ok=True)
         files_to_copy = [
             './input_zipf.txt',
-            './output3.txt',
+            './output3_2292.txt',
          #   './record1_1.txt',
             './whether_packet_drop.txt'
         ]

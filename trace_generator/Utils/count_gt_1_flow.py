@@ -27,7 +27,7 @@ def calculate():
     result_file = open('result.txt', 'w')
 
     # 这里不需要改,output3.txt在其他地方被固化,如果要改的话要一次性修改多个地方
-    with open('output3.txt', 'r') as file:
+    with open('output3_2292.txt', 'r') as file:
         lines = file.readlines()
 
     for output_number in output_numbers:
