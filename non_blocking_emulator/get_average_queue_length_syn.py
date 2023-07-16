@@ -10,7 +10,7 @@ pkt_clk = []
 
 trace_name = sys.argv[1] #"output3_2292.txt"
 
-with open("./trace_syn/" + trace_name, 'r') as f:
+with open("./trace_syn_burst/" + trace_name, 'r') as f:
     while True:
         line = f.readline()
         if not line:
@@ -21,7 +21,7 @@ with open("./trace_syn/" + trace_name, 'r') as f:
 
 queue_clk_dict = {}
 
-with open("./trace_syn/" + "db_size_i_27_1q.txt", 'r') as g:
+with open("./trace_syn_burst/" + "db_size_i_27_1q.txt", 'r') as g:
     while True:
         line = g.readline()
         if not line:
@@ -38,7 +38,7 @@ print("packet average queue length: {}".format(queue_sum / len(pkt_clk)))
 
 # 2. 求任意时刻队列长度，需要读取end_clock
 last_clk = 0
-with open("./trace_syn/" + "end_clock.txt", 'r') as h:
+with open("./trace_syn_burst/" + "end_clock.txt", 'r') as h:
     last_clk = int(h.readline().strip())
 
 # 使用列表推导式选择所有小于 last_clk 的键对应的值
@@ -51,7 +51,7 @@ print("average queue length: {}".format(mean_value))
 filename_without_extension, extension = os.path.splitext(trace_name)
 
 # 打开文件并读取内容
-with open("./trace_syn/" + 'direct_single_topk_' + filename_without_extension + '.txt', 'r') as output:
+with open("./trace_syn_burst/" + 'direct_single_topk_' + filename_without_extension + '.txt', 'r') as output:
     text = output.read()
 
 # 定义正则表达式模式
@@ -73,10 +73,10 @@ else:
 
 print(f'Drop % = {drop}, average elapse time = {elapse_time}')
 
-with open("./trace_syn/" + filename_without_extension + '_queue_info.txt', 'w') as t:
+with open("./trace_syn_burst/" + filename_without_extension + '_queue_info.txt', 'w') as t:
     t.write("packet average queue length: {}\n".format(queue_sum / len(pkt_clk)))
     t.write("average queue length: {}\n".format(mean_value))
 
-with open("./result.txt", 'a') as res:
+with open("./syn_burst_non_blocking_result.txt", 'a') as res:
     res.write(f'{filename_without_extension}, {drop}, {elapse_time}, {queue_sum / len(pkt_clk)}, {mean_value}\n')
 

@@ -49,21 +49,20 @@ int main(int argc, char const* argv[])
         std::string pir_name[7] = { "pl", "mq2", "rr", "sq", "mq4" , "mq8", "direct_single" };
         std::string use_case_name[5] = { "nat", "ddos", "bfd", "topk", "wwww" };
 
-        /*if (argc < 2) {
+        if (argc < 2) {
             std::cout << "Number of args is not 2!\n";
         }
 
         int syn = std::stoi(argv[1]);
 
-        bool SYN = (syn == 1 ? true : false);*/
+        bool SYN = (syn == 1 ? true : false);
 
-        bool SYN = false;
 
         if (SYN) {
             if (argc < 3) {
                 std::cout << "Number of args is not 3!\n";
             }
-            std::string parent_dir = "./trace_syn/";
+            std::string parent_dir = "./trace_syn_burst/";
             std::string trace_name = argv[2];
             std::string trace_path = parent_dir + trace_name;
             std::string sub_dir = parent_dir;
