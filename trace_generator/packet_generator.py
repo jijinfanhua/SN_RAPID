@@ -43,5 +43,5 @@ if __name__ == "__main__":
     # input_file = os.path.join(os.getcwd(), "input.txt")
     # output_file = os.path.join(os.getcwd(), "output.txt")
     input_file = "./input_zipf.txt"
-    output_file = "./output3.txt"
+    output_file = "old_packages.txt"
     generate_packets(input_file, output_file)
