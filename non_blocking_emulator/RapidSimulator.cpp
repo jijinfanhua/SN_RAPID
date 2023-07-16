@@ -49,15 +49,20 @@ int main(int argc, char const* argv[])
         std::string pir_name[7] = { "pl", "mq2", "rr", "sq", "mq4" , "mq8", "direct_single" };
         std::string use_case_name[5] = { "nat", "ddos", "bfd", "topk", "wwww" };
 
-        if (argc != 3) {
-            std::cout << "Number of args is not 3!\n";
+        /*if (argc < 2) {
+            std::cout << "Number of args is not 2!\n";
         }
 
         int syn = std::stoi(argv[1]);
 
-        bool SYN = (syn == 1 ? true : false);
+        bool SYN = (syn == 1 ? true : false);*/
+
+        bool SYN = false;
 
         if (SYN) {
+            if (argc < 3) {
+                std::cout << "Number of args is not 3!\n";
+            }
             std::string parent_dir = "./trace_syn/";
             std::string trace_name = argv[2];
             std::string trace_path = parent_dir + trace_name;
@@ -104,11 +109,13 @@ int main(int argc, char const* argv[])
             }
         }
         else {
-            std::vector<int> time_nums = { 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22 };
-            int times = 9;
-            std::string parent_dir = "./trace_real_caida/";
+            std::vector<int> time_nums = { 1, 2, 3, 4, 5, 6, 7 }; // 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22
 
-            for (int k = 0; k < time_nums.size(); k++) {
+            int times = 14;
+            std::string trace_name = "baidu/"; // caida
+            std::string parent_dir = "./trace_real/" + trace_name;
+
+            for (int k = 1; k < 2; k++) {
                 int j = (k + 1) * times;
                 std::string sub_dir = parent_dir + "res_topk_nic_" + std::to_string(j) + "/";
 
@@ -118,7 +125,7 @@ int main(int argc, char const* argv[])
                     std::filesystem::create_directories(sub_dir);
                 }
 
-                std::string trace_path = sub_dir + "caida_real_build_trace_" + std::to_string(time_nums[k]) + "_NIC_400W_from_2000W.txt";
+                std::string trace_path = sub_dir + "baidu_build_trace_" + std::to_string(time_nums[k]) + "_NIC_400W_from_5000W.txt";
 
                 // 检查文件是否存在
                 if (!std::filesystem::exists(trace_path)) {
@@ -127,7 +134,7 @@ int main(int argc, char const* argv[])
                 }
 
                 for (int i = 27; i <= 27; i++) {
-                    std::string file_name = parent_dir + pir_name[i % 7] + "_" + use_case_name[i / 7] + "_" + std::to_string(j) + ".txt";
+                    std::string file_name = sub_dir + pir_name[i % 7] + "_" + use_case_name[i / 7] + "_" + std::to_string(j) + ".txt";
                     std::cout << file_name << " is used!" << std::endl;
                     os.open(file_name, std::ios_base::out);
                     std::stringstream m_result;
