@@ -48,3 +48,6 @@ flow_num,
 满足要求的output
 
 完全复用arrival_average
+
+> 冯勇 ->
+正常、正常突发、n大流突发，这三种进行比较，正常突发相当于n=1
