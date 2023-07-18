@@ -1,10 +1,11 @@
 import math
 from collections import deque
+import numpy as np
 
 def get_packets(trace_name):
     packets = []
 
-    with open('../Trace/' + trace_name + '.txt', 'r') as f:  # todo: 修改
+    with open('../Trace_multi/' + trace_name + '.txt', 'r') as f:  # todo: 修改
         while True:
             line = f.readline()
             if not line:
@@ -202,11 +203,14 @@ def run_blocking(trace_name, queue_num, pipe_len):
     blocking_scheme_find_schedule(trace_name, queue_num, pipe_len * 22, packets)
 
 
-for packet_num in range(10000, 100001, 10000): # todo：名字
-    for flow_num in range(200, 2001, 200):
+flow_range = np.array([100, 200, 500, 1000, 1500, 2000])
+
+for packet_num in range(10000, 100001, 10000): # todo: 修改trace名字
+    for flow_num in flow_range:
         cycle_num = 100000
         for zipfa in [round(i * 0.01, 2) for i in range(101, 111)] + [1.2]:
-            for burst in [i * 0.5 for i in range(1, 7)]:
+            # for burst in [i * 0.5 for i in range(1, 7)]:
+            for big_flow in range(1,6):
                 for queue_num in [1, 2, 4, 8, 16, 32]:
-                    trace_name = f"output_{packet_num}_{flow_num}_{cycle_num}_{zipfa}_{burst}"
+                    trace_name = f"output_{packet_num}_{flow_num}_{cycle_num}_{zipfa}_{big_flow}"
                     run_blocking(trace_name, queue_num, 4)

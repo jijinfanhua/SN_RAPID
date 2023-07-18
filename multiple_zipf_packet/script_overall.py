@@ -17,3 +17,4 @@ for arg1 in arg1_range:
             # for arg5 in arg5_range:
             for arg6 in arg6_range:
                 subprocess.call(['python', './script.py', str(arg1), str(arg2), str(100000), str(arg4),str(arg6)])
+
