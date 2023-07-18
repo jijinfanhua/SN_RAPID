@@ -4,7 +4,7 @@ from collections import deque
 def get_packets(trace_name):
     packets = []
 
-    with open('../Trace/' + trace_name + '.txt', 'r') as f:  #
+    with open('../Trace/' + trace_name + '.txt', 'r') as f:  # todo: 修改Trace路径
         while True:
             line = f.readline()
             if not line:
@@ -101,7 +101,7 @@ def blocking_scheme_find_next(trace_name, N=4, PIPE_LEN=88, packets=None):
     avg_clock_queue_length = sum(clock_queue_lengths) / len(clock_queue_lengths)
 
     print(f"packet drop: {pkt_drop_num}")
-    record_f = open("./blocking_next_result_burst.txt", 'a')
+    record_f = open("./blocking_next_result_burst_multi_big.txt", 'a')
     record_f.write(f'{trace_name} {PIPE_LEN}, {N}, {drop_flag}, {pkt_drop_num/len(packets)}, {avg_latency}, {avg_packet_queue_length}, {avg_clock_queue_length}\n')
     record_f.close()
 
@@ -191,7 +191,7 @@ def blocking_scheme_find_schedule(trace_name, N=4, PIPE_LEN=88, packets=None):
     avg_clock_queue_length = sum(clock_queue_lengths) / len(clock_queue_lengths)
 
     print(f"packet drop: {pkt_drop_num}")
-    record_f = open("./blocking_schedule_result_burst.txt", 'a')
+    record_f = open("./blocking_schedule_result_multi_big.txt", 'a')
     record_f.write(f'{trace_name} {PIPE_LEN}, {N}, {drop_flag}, {pkt_drop_num / len(packets)}, {avg_latency}, {avg_packet_queue_length}, {avg_clock_queue_length}\n')
     record_f.close()
 
@@ -202,7 +202,7 @@ def run_blocking(trace_name, queue_num, pipe_len):
     # blocking_scheme_find_schedule(trace_name, queue_num, pipe_len * 22, packets)
 
 
-for packet_num in range(10000, 100001, 10000):
+for packet_num in range(10000, 100001, 10000): # todo: 修改trace名字
     for flow_num in range(200, 2001, 200):
         cycle_num = 100000
         for zipfa in [round(i * 0.01, 2) for i in range(101, 111)] + [1.2]:
