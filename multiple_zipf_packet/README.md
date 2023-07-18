@@ -1,53 +1,23 @@
-1. 固定周期数为100000;
-2. 通过控制pkt_num来控制吞吐：
-3. 吞吐：10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%
-    10个
-4. zipfa：from 1.01 to 1.1,step = 0.01 and 1.2
-    11个
-5. flow_num：from 200 to 2000,step = 200
-    10个
-6. 分布系数:from 0.5 to 3.0,step = 0.5
-    6个
-7. 多少个大流?from 1  to 10
-
-# 接口定义
-> script_overall
-
-接受参数:
-packet_num
-zipfa,
-flow_num,
-分布系数,
-多少个大流
-多少时钟周期
-
-调用script
-> script
-
-> zipf_generator
-  
-接受
-吞吐,
-zipfa,
-flow_num,
-多少个大流
-多少时钟周期
-
-> 拼接方法
-
-把所有zipf_generator生成的包拼接在一起
+n大流 no burst   zipf          + packet_generate
 
 
-> packet_generate
+n大流突发：multiple_zipf_generate + burst_packet_generate
 
-接受
-输入的包,
-分布系数
+# 实验方案
+> 吞吐
+> 10 to 100
 
-输出
-满足要求的output
+> 流数
+> 200 to 2000, step = 200
 
-完全复用arrival_average
+> 时钟周期 100000
 
-> 冯勇 ->
-正常、正常突发、n大流突发，这三种进行比较，正常突发相当于n=1
+> zipfa
+> 1.01 to 1.1,step = 0.1, and 1.2
+
+[//]: # (> packet分布系数)
+
+[//]: # (> 0.3 to 3)
+
+> 多少个大流
+> 1 to 5

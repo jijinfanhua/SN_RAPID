@@ -17,3 +17,5 @@ non_blocking_emulator/trace/*
 non_blocking_emulator/trace_syn_burst/*
 
 Trace
+
+Trace_multi
