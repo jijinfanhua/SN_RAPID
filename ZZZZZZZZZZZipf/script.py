@@ -7,11 +7,13 @@ import time
 
 def main(arg1, arg2, arg3, arg4):
     # Create a new folder for the current execution inside the "trace" folder
-    trace_folder_name = "./trace/_{}_{}_{}_{}_".format(str(arg1), str(arg2), str(arg3), str(arg4))
-    syn_folder_name = "./../non_blocking_emulator/trace_syn/"
+    input_folder_name = "./input_syn"
+    trace_folder_name = "./trace/{}_{}_{}_{}".format(str(arg1), str(arg2), str(arg3), str(arg4))
+    syn_folder_name = "./trace_syn/"
 
     os.makedirs(trace_folder_name, exist_ok=True)
     os.makedirs(syn_folder_name, exist_ok=True)
+    os.makedirs(input_folder_name,exist_ok=True)
 
     subprocess.check_call(['python', './zipf_intput_generator.py', str(int(arg1)), str(arg2), str(arg3), str(arg4)])
 
@@ -30,15 +32,15 @@ def main(arg1, arg2, arg3, arg4):
 
     # Move the 'syn' file to the 'non_blocking/trace_syn' folder
     shutil.move(output_file_name, os.path.join(syn_folder_name, os.path.basename(output_file_name)))
-
+    shutil.move(input_file_name, os.path.join(input_folder_name,os.path.basename(input_file_name)))
     # Remove the original 'trace' folder and all its contents
     shutil.rmtree(trace_folder_name)
 
-    os.remove(input_file_name)
+    # os.remove(input_file_name)
 
 
 if __name__ == "__main__":
     main(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
-
-trace_file_name = "./trace"
-shutil.rmtree(trace_file_name)
+#
+# trace_file_name = "./trace"
+# shutil.rmtree(trace_file_name)

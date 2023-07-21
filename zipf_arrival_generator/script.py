@@ -27,4 +27,4 @@ def main(arg1, arg2, arg3, arg4,arg5):
     shutil.move(output_file_name,Destination_folder)
 
 if __name__ == "__main__":
-    main(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5])
+    main(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
